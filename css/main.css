@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background: #031c2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+  /* font: 500 1.6rem Poppins; /* Peso da fonte, tamanho da fonte e estilo da fonte */
+  font-weight: 500;
+  font-family: Vidaloka;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+/* As mudanças realizadas nessa página vão ser a base para todas as páginas */
