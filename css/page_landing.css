@@ -1,0 +1,14 @@
+.text_container h1 {
+  font-weight: 418;
+  font-size: 6rem;
+  line-height: 4.6rem;
+  margin-top: -8rem;
+  margin-left: 8rem;
+}
+
+.text_container h2 {
+  font-weight: 100;
+  font-size: 1.5rem;
+  margin-left: 3rem;
+  align-self: center;
+}
