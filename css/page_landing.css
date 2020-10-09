@@ -1,14 +1,99 @@
+.text_container {
+  align-self: auto;
+}
+
 .text_container h1 {
   font-weight: 418;
-  font-size: 6rem;
+  font-size: 9rem;
   line-height: 4.6rem;
   margin-top: -8rem;
   margin-left: 8rem;
 }
 
 .text_container h2 {
-  font-weight: 100;
-  font-size: 1.5rem;
-  margin-left: 3rem;
-  align-self: center;
+  font-weight: 500;
+  font-size: 3.6rem;
+  line-height: 4.6rem;
+  margin-top: 0.8rem;
+  /*margin-left: 3rem;
+  margin-top: -3rem;
+  align-self: center;*/
+}
+
+.text_container h3 {
+  font-weight: 10;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  margin-top: 0.8rem;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: center;
+  margin: 3.2rem 0;
+  align-self: flex-end;
+  margin-left: -100rem;
+}
+
+.buttons_container a {
+  width: 15rem;
+  height: 7.1rem;
+  border-radius: 0.8rem; /* Arredonda a borda das caixas */
+  margin-right: 1.6rem;
+  font: 500 2.4rem Vidaloka;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  transition: background 0.2s;
+
+  color: #ffffff;
+}
+
+.buttons_container a.Contratar_servicos {
+  background: #425bb2;
+}
+
+.buttons_container a.Prestar_servicos {
+  background: #f5fa08;
+}
+
+.buttons_container a.Visualizar_servicos {
+  background: #42acb2;
+}
+
+@media (min-width: 1100px) {
+  #page_landing #container {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr; /* 1ª coluna: 2 frações 2ª coluna: 1 fração e 3ª coluna: 2frações */
+    grid-template-rows: 350px 1fr;
+    grid-template-areas:
+      "texting texting  image"
+      "button button  button";
+
+    column-gap: 87px;
+    row-gap: 86px;
+  }
+
+  .image_container {
+    grid-area: image;
+    text-align: initial;
+    align-self: right;
+    margin: 0;
+  }
+
+  .buttons_container {
+    grid-area: button;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .text_container {
+    grid-area: texting;
+    justify-self: end;
+    font-size: 1.2rem;
+  }
 }

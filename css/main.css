@@ -1,6 +1,10 @@
+:root {
+  font-size: 60%;
+}
+
 * {
-  /*margin: 0;
-  padding: 0;*/
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -27,4 +31,14 @@ textarea {
   color: #ffffff;
 }
 
+#container {
+  width: 90vw;
+  max-width: 700px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 62.5%; /* Todo 1rem vai ser relativo a 10px*/
+  }
+}
 /* As mudanças realizadas nessa página vão ser a base para todas as páginas */
