@@ -4,8 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contratante</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
   </head>
   <body>
-    <h1>Deu certo!</h1>
+    <form>
+      <fieldset>
+        <legend>Cadastro Contratante</legend>
+        <div class="form-group">
+          <label for="inputNomeCompleto">Nome Completo</label>
+          <input type="text" class="form-control" id="inputNomeCompleto" />
+        </div>
+        <div class="form-group">
+          <label for="inputEndereco">Endereço</label>
+          <input type="text" class="form-control" id="inputEndereco" />
+        </div>
+        <div class="form-group">
+          <label for="inputWpp">Whatsapp (somente números)</label>
+          <input type="text" class="form-control" id="inputWpp" placeholder="(XX) 9 XXXX-XXXX"/>
+        </div>
+        <div class="form-group">
+          <label for="inputFoto">Link da sua Foto (Comece com https://) </label>
+          <input type="text" class="form-control" id="inputFoto" />
+        </div>
+      </fieldset>
+    </form>
   </body>
 </html>
