@@ -32,8 +32,8 @@ textarea {
 }
 
 #container {
-  width: 90vw;
-  padding-left: 10%;
+  width: 100%;
+  padding-left: 0%;
 }
 
 @media (min-width: 700px) {
