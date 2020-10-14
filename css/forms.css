@@ -1,0 +1,27 @@
+.form-group label {
+  font-size: 1.4rem;
+  color: #32264d;
+}
+
+.form-group input {
+  width: 100%;
+  height: 5.6rem;
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  background-color: #cfcfd6;
+  border: 1px solid #ffffff;
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 1.6rem Vidaloka;
+}
+
+.form-group:focus-within::after {
+  content: "";
+
+  width: calc(100% - 3.2rem); /* Cálculo para aplicar a largura */
+  height: 2px;
+  background: #ffffff;
+  position: absolute; /*  */
+  left: 1.6rem;
+  bottom: 0px;
+}

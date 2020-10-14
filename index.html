@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#031C2B" />
+    <meta name="theme-color" content="#ffffff" />
     <title>SSG | Sistema de Serviços Gerais</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/page_landing.css" />
@@ -16,36 +21,38 @@
   </head>
   <body>
     <div id="container">
-      <div class="text_container">
-        <h1>SSG</h1>
-        <h2>Sistema de Serviços Gerais</h2>
-        <h3>Mantendo sua casa em ordem com toda excelência que você merece!</h3>
-      </div>
+      <div class="row">
+        <div class="col-7 text_container">
+          <h1>SSG</h1>
+          <h2>Sistema de Serviços Gerais</h2>
+          <h3>
+            Mantendo sua casa em ordem com toda excelência que você merece!
+          </h3>
+        </div>
 
-      <div class="image_container">
-        <img
-          id="imagem_principal"
-          src="./img/imagem_ssg.png"
-          alt="Sistema de serviços gerais"
-        />
+        <div class="col-3 image_container">
+          <img
+            id="imagem_principal"
+            src="./img/imagem_ssg.png"
+            alt="Sistema de serviços gerais"
+          />
+        </div>
       </div>
-
-      <p></p>
 
       <div class="buttons_container">
         <a class="btn Contratar_servicos" href="./src/contratante.html">
           Contratar serviços
         </a>
         <a class="btn Prestar_servicos" href="./src/prestador_de_serviços.html">
-          Prestar serviço
+          Prestar serviços
         </a>
-        <a class="btn Visualizar_servicos" href="./src/visualizar_serviços.html">
-          Visualizar servicos
+        <a
+          class="btn Visualizar_servicos"
+          href="./src/visualizar_serviços.html"
+        >
+          Visualizar serviços
         </a>
       </div>
     </div>
-    <!--<button id="Contratar_servicos">Contratar serviços</button>
-    <button id="Prestar_servicos">Prestar serviços</button>
-    <button id="Visualizar_servicos">Visualizar serviços</button> -->
   </body>
 </html>
