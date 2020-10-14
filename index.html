@@ -14,44 +14,78 @@
 
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/page_landing.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Vidaloka:wght@400;600&amp;display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div id="container">
+  <body class="principal">
+    <div>
       <div class="row">
-        <div class="col-7 text_container">
-          <h1>SSG</h1>
-          <h2>Sistema de Serviços Gerais</h2>
-          <h3>
-            Mantendo sua casa em ordem com toda excelência que você merece!
-          </h3>
+        <div class="col primeira">
+          <div class="card-header">
+            <h1>SSG</h1>
+            <h2>Sistema de Serviços Gerais</h2>
+            <h3>
+              Mantendo sua casa em ordem com toda excelência que você merece!
+            </h3>
+          </div>
         </div>
-
-        <div class="col-3 image_container">
-          <img
-            id="imagem_principal"
-            src="./img/imagem_ssg.png"
-            alt="Sistema de serviços gerais"
-          />
+        <div id="col_terceira" class="col terceira">
+          <button class="botao_visualizar">
+            Visualizar serviços prestados
+          </button>
         </div>
       </div>
+      <div class="row">
+        <div class="col segunda">
+          <form>
+            <main class="container">
+              <fieldset class="dados_contratante">
+                <!--- <legend class="dados_principais"></legend> -->
 
-      <div class="buttons_container">
-        <a class="btn Contratar_servicos" href="./src/contratante.html">
-          Contratar serviços
-        </a>
-        <a class="btn Prestar_servicos" href="./src/prestador_de_serviços.html">
-          Prestar serviços
-        </a>
-        <a
-          class="btn Visualizar_servicos"
-          href="./src/visualizar_serviços.html"
-        >
-          Visualizar serviços
-        </a>
+                <div class="form-group">
+                  <label for="inputNomeCompleto">Usuário</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputNomeCompleto"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inputEndereco">Senha</label>
+                  <input type="text" class="form-control" id="inputEndereco" />
+                </div>
+                <div class="container_login">
+                  <button class="botao_login">Login</button>
+                </div>
+              </fieldset>
+              <footer>
+                <p class="pergunta_cadastro">Já possui cadastro?</p>
+                <div class="buttons-container">
+                  <a class="botao_contratante" href="/src/contratante.html"
+                    >Cadastrar-se como contratante</a
+                  >
+                  <a
+                    class="botão_prestador"
+                    href="/src/prestador_de_serviços.html"
+                    >Cadastrar-se como prestador</a
+                  >
+                </div>
+              </footer>
+            </main>
+          </form>
+        </div>
+        <div class="col primeira">
+          <div id="imagem">
+            <img
+              id="imagem_principal"
+              src="./img/imagem_ssg.png"
+              alt="Sistema de serviços gerais"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </body>

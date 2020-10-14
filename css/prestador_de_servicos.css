@@ -15,6 +15,11 @@
 
 #prestador .card-header p {
   color: #ffffffa6;
+  font-size: 24px;
+}
+
+#prestador .card-header strong {
+  font-size: 24px;
 }
 
 #prestador fieldset {
@@ -39,6 +44,25 @@
 
   padding-bottom: 1.6rem;
   border-bottom: 1px solid #e6e6f0;
+}
+
+.card-header .top-bar-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2.5rem 0;
+}
+.card-header .top-bar-container a {
+  height: 3.2rem;
+  transition: opacity 0.2s;
+
+  position: absolute;
+  left: 50px;
+  top: 15px;
+  z-index: 1;
 }
 
 #prestador main footer {
@@ -74,6 +98,7 @@
 
   #prestador .card-header {
     margin-bottom: 0;
+    margin: auto;
   }
 
   #prestador main fieldset {

@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100vh;
-}
-
 body {
   background: #031c2b;
   display: flex;
