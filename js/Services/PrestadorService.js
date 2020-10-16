@@ -38,5 +38,10 @@ const submit = (event) => {
 }
 
 var botao = document.getElementById("botao_cadastrar");
-
 botao.onclick = submit;
+
+var botaoCancelar = document.getElementById("botao_cancelar");
+botaoCancelar.onclick = (event) => {
+  event.preventDefault();
+  window.history.go(-1);
+} 
