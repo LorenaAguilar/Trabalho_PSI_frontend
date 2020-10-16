@@ -27,15 +27,20 @@ const submit = (event) => {
 
       console.log(JSON.stringify(data));
 
+      const divAviso = document.getElementById('aviso');
+      
       axios.post(url, data,  headers)
       .then(response => {
-        console.log(response)
         if(response.data.result === "Succeeded") {
-          console.log('Cadastro realizado com sucesso!')
+          divAviso.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">O cadastro foi realizado com sucesso!</div>`;
         } else {
-          console.log('Não foi possível realizar o cadastro!')
+          divAviso.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">Não foi possível realizar o cadastro!</div>`;
+          console.log('Erro desconhecido durante o cadastro do prestador', response)
         }
-      }).catch((response) => console.log('Erro desconhecido durante o cadastro do prestador', response));
+      }).catch((response) => { 
+        divAviso.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">Não foi possível realizar o cadastro!</div>`;
+        console.log('Erro desconhecido durante o cadastro do prestador', response)
+      });
 }
 
 var botao = document.getElementById("botao_cadastrar");
