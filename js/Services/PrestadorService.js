@@ -50,4 +50,20 @@ var botaoCancelar = document.getElementById("botao_cancelar");
 botaoCancelar.onclick = (event) => {
   event.preventDefault();
   window.history.go(-1);
-} 
+}
+
+const getMunicipios = () => {
+  const url = 'https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes/31030/municipios';
+
+  axios.get(url)
+  .then((response) => {
+    const nomesBairros = response.data.map((item) => item.nome);
+    const optionsBairros = nomesBairros.map(nomeBairro => (`<option value="${nomeBairro}">${nomeBairro}</option>`)); 
+
+    const selectElement = document.getElementById("inputArea");
+    selectElement.innerHTML = optionsBairros;
+    
+  })
+  .catch();
+};
+getMunicipios();
