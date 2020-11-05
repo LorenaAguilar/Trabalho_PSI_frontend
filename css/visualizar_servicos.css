@@ -1,0 +1,98 @@
+#visualizar_servicos #container {
+  width: 100vw; /* Ocupando todo espaço visivel*/
+  height: 100vw; /* Ocupando toda largura visivel*/
+}
+
+#buscar_prestador {
+  margin-top: 3.2rem;
+}
+
+#buscar_prestador label {
+  color: #ffffff;
+  font: 700 1.6rem Vidaloka;
+}
+
+#buscar_prestador .select-block {
+  margin-bottom: 1.4rem;
+  display: inline-grid;
+}
+
+#buscar_prestador select {
+  width: 100%;
+  height: 5.6rem;
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  border: 0;
+  border-radius: 0.8rem;
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 700 1.6rem Vidaloka;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin-right: 32px;
+}
+
+#buscar_prestador button {
+  width: 100%;
+  height: 5.6rem;
+  background: #ffffff;
+  color: #000000;
+  border: 0;
+  border-radius: 0.8rem;
+  outline: 0;
+  cursor: pointer; /* Quando passarmos o mouse sobre o botão, a setinha vira uma mãozinha */
+  font: 700 1.6rem Vidaloka;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s;
+  margin-top: 3.1rem;
+  width: 200px;
+}
+
+#buscar_prestador button:hover {
+  background-color: #ccc1c1;
+}
+
+@media (min-width: 700px) {
+  #buscar_prestador {
+    display: flex;
+  }
+
+  #visualizar_servicos #container {
+    max-width: 100vw;
+    max-height: 700px;
+  }
+  .page-header {
+    height: 340px;
+  }
+
+  .page-header .header-content {
+    max-width: 740px;
+    align-items: center;
+    margin: 0 auto;
+
+    flex: 1 1;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .page-header .header-content strong {
+    max-width: 350px;
+    font: 700 2.4rem Vidaloka;
+    margin-top: 32px;
+  }
+
+  #search-teachers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    position: absolute;
+    bottom: -28px;
+  }
+}

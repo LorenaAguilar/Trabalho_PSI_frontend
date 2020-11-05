@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizar serviços</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+    <link rel="stylesheet" href="../css/visualizar_servicos.css" />
+  </head>
+  <body id="visualizar_servicos">
+    <div id="container">
+      <header class="page-header">
+        <div class="header-content">
+          <strong class="card-title">Olá, </strong>
+          <p class="card-text">
+            Abaixo você pode encontrar nossos serviços prestados
+          </p>
+          <!-- <strong> => Tag de texto que já vem por padrão com as escritas em negrito-->
+          <form id="buscar_prestador">
+            <!--<form> => Tag para formulários-->
+            <div class="select-block">
+              <label for="select_servico">Serviço</label>
+              <select name="select_servico" id="select_servico">
+                <!-- <select> => Tag para criar um select no formulário-->
+                <option value="" disabled="" hidden="">
+                  Selecione uma opção
+                </option>
+                <option value="0">Limpeza geral</option>
+                <option value="1">Elétrica</option>
+                <option value="2">Encanamento</option>
+                <option value="3">Pintura</option>
+                <option value="4">Jardinagem</option>
+                <!-- Acredito que com os números vai ficar melhor ao mandar pro pessoal do back. Será?-->
+              </select>
+            </div>
+            <div class="select-block">
+              <label for="weekday">Região</label>
+              <select name="weekday" id="weekday">
+                <option value="" disabled="" hidden="">
+                  Selecione uma opção
+                </option>
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+              </select>
+            </div>
+
+            <button type="submit">Filtrar</button>
+            <!-- Quando o botão é do tipo submit, quando clicarmos nele, ele vai pegar todo o formulário e enviar-->
+          </form>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>
