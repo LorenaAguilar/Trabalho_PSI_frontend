@@ -41,20 +41,15 @@
               </select>
             </div>
             <div class="select-block">
-              <label for="weekday">Região</label>
-              <select name="weekday" id="weekday">
-                <option value="" disabled="" hidden="">
-                  Selecione uma opção
-                </option>
-                <option value="0">A</option>
-                <option value="1">B</option>
-                <option value="2">C</option>
-              </select>
+              <label for="select_regiao">Região</label>
+              <select name="select_regiao" id="select_regiao"></select>
             </div>
 
             <button type="submit">Filtrar</button>
             <!-- Quando o botão é do tipo submit, quando clicarmos nele, ele vai pegar todo o formulário e enviar-->
           </form>
+          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+          <script src="../js/Services/VisualizarService.js"></script>
         </div>
       </header>
     </div>
