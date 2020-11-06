@@ -12,4 +12,21 @@ const getMunicipios = () => {
     })
     .catch();
   };
-  getMunicipios();
+getMunicipios();
+
+const getInformationLogin = () => {
+  const token = localStorage.getItem('tokenUser');
+  console.log(token)
+  if(token !== null) {
+    const divElement = document.getElementById('login-sucesso');
+    
+    var payload = JSON.parse(window.atob(token.split('.')[1])); 
+    
+    divElement.innerHTML = `<strong class="card-title">Bem vindo(a), ${payload.unique_name[0]}! </strong>`;
+  } else {
+    const divElement = document.getElementById('sem-login');
+
+    divElement.innerHTML = `Faça seu login <a style="color: red;" href="../index.html">aqui</a> para contratar um de nossos serviços`;   
+  }
+}
+getInformationLogin();
