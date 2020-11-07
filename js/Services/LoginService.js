@@ -12,7 +12,7 @@ const login = (event) => {
     };    
 
     const headers = {
-    'content-type': 'application/json'
+        'content-type': 'application/json'
     }
 
     axios.post(url, data, headers)
@@ -20,8 +20,9 @@ const login = (event) => {
         console.log(response.data);
         if(response.data.authenticated) {
             localStorage.setItem('tokenUser', response.data.accessToken);
-            console.log('Login realizado com sucesso!!')
-            console.log(localStorage.getItem('tokenUser'))
+            if(response.data.roles.find((role) => role === 'Prestador-SSG_API') !== null) {
+                window.location.href = './src/visualizar_serviços.html';
+            }
         }
     }).catch((error) => {
         console.log(error);

@@ -17,6 +17,11 @@
   <body id="visualizar_servicos">
     <div id="container">
       <header class="page-header">
+        <div class="top-bar-container">
+            <a href="../index.html">
+              <img src="../img/back.svg" alt="Voltar"
+            /></a>
+          </div>
         <div class="header-content">
           <div id="login-sucesso"></div>
           <strong>Serviços Prestados</strong>
@@ -30,14 +35,14 @@
               <label for="select_servico">Serviço</label>
               <select name="select_servico" id="select_servico">
                 <!-- <select> => Tag para criar um select no formulário-->
-                <option value="" disabled="" hidden="">
+                <option value="null">
                   Selecione uma opção
                 </option>
-                <option value="0">Limpeza geral</option>
-                <option value="1">Elétrica</option>
-                <option value="2">Encanamento</option>
-                <option value="3">Pintura</option>
-                <option value="4">Jardinagem</option>
+                <option value="Limpeza geral">Limpeza geral</option>
+                <option value="Elétrica">Elétrica</option>
+                <option value="Encanamento">Encanamento</option>
+                <option value="Pintura">Pintura</option>
+                <option value="Jardinagem">Jardinagem</option>
                 <!-- Acredito que com os números vai ficar melhor ao mandar pro pessoal do back. Será?-->
               </select>
             </div>
@@ -46,32 +51,15 @@
               <select name="select_regiao" id="select_regiao"></select>
             </div>
 
-            <button type="submit">Filtrar</button>
+            <button type="submit" id="botaoFiltrar">Filtrar</button>
             <!-- Quando o botão é do tipo submit, quando clicarmos nele, ele vai pegar todo o formulário e enviar-->
           </form>
           <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
           <script src="../js/Services/VisualizarService.js"></script>
         </div>
       </header>
-      <div class="row" style="background-color: white; margin: 0px 25%;">
-        <div class="col-2" id="imagem">
-          <img
-            style="width: 103px; height: auto"
-            src="https://pbs.twimg.com/profile_images/1321606350745620483/J-vK3PZj_400x400.jpg"
-          />
-        </div>
-        <div style="color: black" class="col-8" id="informacoes">
-          <strong><p>Nome: Lorena Alves Aguilar</p>
-          <p>Serviço: Programadora</p>
-          <p>Bairros que atende: Ouro Minas e São Gabriel</p>
-          <p>Preço: Mais do que você pode pagar (R$/hora)</p>
-          <hr />
-          <p>
-            Biografia: Trabalhou nisso, nisso e naquilo. Possui referências no
-            ramo disso.
-          </p>
-        </div></strong>
-      </div>
+
+      <div id="listaServicos">
     </div>
   </body>
 </html>

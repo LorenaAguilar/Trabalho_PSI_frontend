@@ -31,6 +31,7 @@ const submit = (event) => {
       axios.post(url, data,  headers)
       .then(response => {
         if(response.data.result === "Succeeded") {
+          realizarLogin(usuario, senha).then(cadastrarServico());
           divAviso.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">O cadastro foi realizado com sucesso!</div>`;
         } else {
           divAviso.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">Não foi possível realizar o cadastro!</div>`;
@@ -42,6 +43,57 @@ const submit = (event) => {
           console.log('Erro desconhecido durante o cadastro do prestador', response)
         });
 }
+
+const cadastrarServico = () => {
+  const tipoServico = document.getElementById('inputTipoServico').value;
+  const preco = document.getElementById('inputPreco').value;
+  const area = document.getElementById('inputArea').value;
+
+  const url = 'https://localhost:44366/api/servico';
+
+  const data = {
+      userID: tipoServico,
+      password: preco,
+      area: area
+  };    
+
+  const headers = {
+      'content-type': 'application/json'
+  }
+
+  return axios.post(url, data, headers)
+  .then(response => {
+      console.log(response.data);
+      if(response.data.authenticated) {
+          localStorage.setItem('tokenUser', response.data.accessToken);
+      }
+  }).catch((error) => {
+      console.log(error);
+  });
+}
+
+const realizarLogin = (usuario, senha) => {
+  const url = 'https://localhost:44366/api/login';
+
+  const data = {
+      userID: usuario,
+      password: senha
+  };    
+
+  const headers = {
+      'content-type': 'application/json'
+  }
+
+  return axios.post(url, data, headers)
+  .then(response => {
+      console.log(response.data);
+      if(response.data.authenticated) {
+          localStorage.setItem('tokenUser', response.data.accessToken);
+      }
+  }).catch((error) => {
+      console.log(error);
+  });
+};
 
 var botao = document.getElementById("botao_cadastrar");
 botao.onclick = submit;
