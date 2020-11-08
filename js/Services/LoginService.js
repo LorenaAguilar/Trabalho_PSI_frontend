@@ -1,33 +1,33 @@
-const login = (event) => {
-    event.preventDefault();
+import { Login } from '../Endpoints.js';
+import { Headers } from '../constantes.js';
 
-    const usuario = document.getElementById('inputUsuario').value;
-    const senha = document.getElementById('inputSenha').value;
-    
-    const url = 'https://localhost:44366/api/login';
-
+export function RealizarLogin(usuario, senha) {
     const data = {
         userID: usuario,
         password: senha
     };    
 
-    const headers = {
-        'content-type': 'application/json'
-    }
-
-    axios.post(url, data, headers)
-    .then(response => {
-        console.log(response.data);
-        if(response.data.authenticated) {
-            localStorage.setItem('tokenUser', response.data.accessToken);
-            if(response.data.roles.find((role) => role === 'Prestador-SSG_API') !== null) {
-                window.location.href = './src/visualizar_serviços.html';
+    return axios.post(Login, data, Headers)
+        .then(response => {
+            console.log(response.data);
+            if(response.data.authenticated) {
+                localStorage.setItem('tokenUser', response.data.accessToken);
             }
-        }
-    }).catch((error) => {
-        console.log(error);
-    });
+        }).catch((error) => {
+            console.log('LoginService', error);
+            throw error;
+        });
+};
+
+export function EstaLogado() {
+    return localStorage.getItem('tokenUser') !== null;
+} 
+
+export function Deslogar() {
+    localStorage.removeItem('tokenUser');
 }
 
-var botao = document.getElementById("botao_login");
-botao.onclick = login;
+export function getTokenDecodificado () {
+    const token = localStorage.getItem('tokenUser');    
+    return JSON.parse(window.atob(token.split('.')[1]));
+}
