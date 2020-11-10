@@ -1,6 +1,6 @@
 import { TipoUsuario } from '../constantes.js';
-import { CadastrarPrestador } from '../services/PrestadorService.js';
-import { GetTodosMunicipios } from '../services/MunicipiosService.js';
+import { CadastrarPrestador } from '../Services/PrestadorService.js';
+import { GetTodosMunicipios } from '../Services/MunicipiosService.js';
 
 const submit = (event) => {
   event.preventDefault();

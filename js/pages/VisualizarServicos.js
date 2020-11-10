@@ -1,5 +1,5 @@
-import { getTokenDecodificado, EstaLogado } from '../services/LoginService.js';
-import { GetTodosMunicipios } from '../services/MunicipiosService.js'; 
+import { getTokenDecodificado, EstaLogado } from '../Services/LoginService.js';
+import { GetTodosMunicipios } from '../Services/MunicipiosService.js'; 
 
 GetTodosMunicipios().then((response) => {
   const nomesBairros = response.map((item) => item.nome);

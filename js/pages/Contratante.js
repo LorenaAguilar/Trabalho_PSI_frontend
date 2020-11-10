@@ -1,5 +1,5 @@
 import { TipoUsuario } from '../Constantes.js';
-import { CadastrarContrante } from '../services/ContratanteService.js';
+import { CadastrarContrante } from '../Services/ContratanteService.js';
 
 const submit = (event) => {
   event.preventDefault();

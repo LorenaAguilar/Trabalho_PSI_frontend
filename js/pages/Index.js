@@ -1,4 +1,4 @@
-import { RealizarLogin } from '../services/LoginService.js';
+import { RealizarLogin } from '../Services/LoginService.js';
 import { rolesUsuario } from '../Constantes.js';
 
 const login = (event) => {
