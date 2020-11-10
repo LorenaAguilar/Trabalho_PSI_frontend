@@ -4,4 +4,4 @@ export const CadastroContratanteEPrestador = 'https://localhost:44366/api/signup
 
 export const Login = 'https://localhost:44366/api/login';
 
-export const Servicos = 'https://localhost:44366/api/servico';
+export const ListarServicos = 'https://localhost:44366/api/ListarServicos';

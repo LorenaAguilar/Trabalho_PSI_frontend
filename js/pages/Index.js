@@ -1,5 +1,5 @@
-import { RealizarLogin } from '../services/LoginService';
-import { rolesUsuario } from '../Constantes';
+import { RealizarLogin } from '../services/LoginService.js';
+import { rolesUsuario } from '../Constantes.js';
 
 const login = (event) => {
     event.preventDefault();

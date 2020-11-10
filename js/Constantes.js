@@ -8,5 +8,7 @@ export const TipoUsuario = {
 }
 
 export const rolesUsuario = {
-    Prestador: 'Prestador-SSG_API'
+    Prestador: 'Prestador-SSG_API',
+    Admin: "Admin-SSG_API",
+    Cliente: "Contratante-SSG_API"
 }
