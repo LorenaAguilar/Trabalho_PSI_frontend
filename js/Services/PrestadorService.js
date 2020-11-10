@@ -1,5 +1,5 @@
 import { CadastroContratanteEPrestador } from '../Endpoints.js';
-import { Headers } from '../constantes.js';
+import { Headers } from '../Constantes.js';
 
 export function CadastrarPrestador (data) {
   return axios.post(CadastroContratanteEPrestador, data, Headers)
