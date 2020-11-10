@@ -10,8 +10,8 @@ const login = (event) => {
     RealizarLogin(usuario, senha)
     .then(response => {
         if(response.authenticated) {
-            if(response.roles.find((role) => role === rolesUsuario.Prestador) !== null) {
-                window.location.href = './src/visualizar_serviços.html';
+            if(response.roles.find((role) => role === rolesUsuario.Cliente) !== null) {
+                window.location.pathname = './src/visualizar_serviços.html';
             }
         }
     });

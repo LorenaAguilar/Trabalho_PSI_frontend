@@ -51,5 +51,5 @@ botao.onclick = submit;
 var botaoCancelar = document.getElementById("botao_cancelar");
 botaoCancelar.onclick = (event) => {
   event.preventDefault();
-  window.history.go(-1);
+  window.location.pathname = '../../index.html';
 }
