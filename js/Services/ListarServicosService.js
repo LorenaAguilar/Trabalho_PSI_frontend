@@ -1,5 +1,5 @@
 import { ListarServicos } from '../Endpoints.js';
-import { Headers } from '../constantes.js';
+import { Headers } from '../Constantes.js';
 
 export function ListarServicos () {
   return axios.post(Servicos, data, Headers)

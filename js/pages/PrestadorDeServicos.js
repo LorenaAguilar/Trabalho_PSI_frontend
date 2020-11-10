@@ -1,4 +1,4 @@
-import { TipoUsuario } from '../constantes.js';
+import { TipoUsuario } from '../Constantes.js';
 import { CadastrarPrestador } from '../Services/PrestadorService.js';
 import { GetTodosMunicipios } from '../Services/MunicipiosService.js';
 

@@ -1,5 +1,5 @@
 import { Login } from '../Endpoints.js';
-import { Headers } from '../constantes.js';
+import { Headers } from '../Constantes.js';
 
 export function RealizarLogin(usuario, senha) {
     const data = {
