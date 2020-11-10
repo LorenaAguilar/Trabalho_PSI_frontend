@@ -21,7 +21,7 @@ const login = (event) => {
         if(response.data.authenticated) {
             localStorage.setItem('tokenUser', response.data.accessToken);
             if(response.data.roles.find((role) => role === 'Prestador-SSG_API') !== null) {
-                window.location.href = './src/visualizar_serviços.html';
+                window.location.pathname = './src/visualizar_serviços.html';
             }
         }
     }).catch((error) => {
