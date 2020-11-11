@@ -53,7 +53,7 @@ botao.onclick = submit;
 var botaoCancelar = document.getElementById("botao_cancelar");
 botaoCancelar.onclick = (event) => {
   event.preventDefault();
-  window.location.pathname = '../../index.html';
+  window.location.pathname = `${getURL()}/index.html`;
 }
 
 GetTodosMunicipios().then((response) => {

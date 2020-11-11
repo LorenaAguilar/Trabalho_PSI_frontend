@@ -1,5 +1,6 @@
 import { RealizarLogin } from '../Services/LoginService.js';
 import { rolesUsuario } from '../Constantes.js';
+import { getURL } from '../functions.js'
 
 const login = (event) => {
     event.preventDefault();
@@ -11,11 +12,12 @@ const login = (event) => {
     .then(response => {
         if(response.authenticated) {
             if(response.roles.find((role) => role === rolesUsuario.Cliente) !== null) {
-                window.location.pathname = './src/visualizar_serviços.html';
+                window.location.pathname = `${getURL()}/src/visualizar_serviços.html`;
             }
         }
     });
 }
 
-var botao = document.getElementById("botao_login");
-botao.onclick = login;
+document.getElementById("botao_login").onclick = login;
+
+document.getElementById("botao_visualizar").onclick = () => window.location.pathname = `${getURL()}/src/visualizar_serviços.html`
