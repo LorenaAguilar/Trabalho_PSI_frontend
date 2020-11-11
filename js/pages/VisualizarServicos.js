@@ -19,7 +19,7 @@ GetTodosMunicipios().then((response) => {
 });
 
 const getInformationLogin = () => {
-  if(EstaLogado) {
+  if(EstaLogado()) {
     const divElement = document.getElementById('login-sucesso');
     
     const { unique_name } = getTokenDecodificado();
