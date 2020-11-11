@@ -43,7 +43,7 @@ const getInformationLogin = () => {
   } else {
     const divElement = document.getElementById('sem-login');
 
-    divElement.innerHTML = `Faça seu login <a style="color: red;" href="../../index.html">aqui</a> para contratar um de nossos serviços`;   
+    divElement.innerHTML = `Faça seu login <a style="color: red;" href="../index.html">aqui</a> para contratar um de nossos serviços`;   
   }
 }
 
