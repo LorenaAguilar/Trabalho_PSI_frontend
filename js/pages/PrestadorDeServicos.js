@@ -15,7 +15,7 @@ const submit = (event) => {
   const biografia = document.getElementById('inputBiografia').value;
   
   const data = {
-    userID: usuario,
+    email: usuario,
     password: senha,
     nomeCompleto: nomeCompleto,
     endereco: endereco,

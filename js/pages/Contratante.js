@@ -13,7 +13,7 @@ const submit = (event) => {
   const foto = document.getElementById('inputNomeCompleto').value;
     
   const data = {
-    userID: usuario,
+    email: usuario,
     password: senha,
     nomeCompleto: nomeCompleto,
     endereco: endereco,
