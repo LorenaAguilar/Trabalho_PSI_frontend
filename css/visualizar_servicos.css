@@ -28,6 +28,12 @@
   padding: 2.5rem 0;
 }
 
+.page-header .top-bar-logout {
+  position: fixed;
+  right: 0;
+  width: 8em;
+}
+
 .page-header .top-bar-container a {
   height: 3.2rem;
   transition: opacity 0.2s;

@@ -1,5 +1,5 @@
 import { TipoUsuario } from '../Constantes.js';
-import { CadastrarPrestador } from '../Services/PrestadorService.js';
+import { CadastrarUsuario } from '../Services/UsuarioService.js';
 import { GetTodosMunicipios } from '../Services/MunicipiosService.js';
 import { getURL } from '../functions.js'
 
@@ -27,7 +27,7 @@ const submit = (event) => {
 
   const divAviso = document.getElementById('aviso');
   
-  CadastrarPrestador(data)
+  CadastrarUsuario(data)
   .then(response => {
     if(response.result === "Succeeded") {
       divAviso.innerHTML = 

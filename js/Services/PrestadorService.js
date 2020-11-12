@@ -1,8 +1,8 @@
-import { CadastroContratanteEPrestador } from '../Endpoints.js';
+import { Prestador } from '../Endpoints.js';
 import { Headers } from '../Constantes.js';
 
-export function CadastrarPrestador (data) {
-  return axios.post(CadastroContratanteEPrestador, data, Headers)
+export function getPrestador (data) {
+  return axios.get(Prestador, data, Headers)
     .then(response => response.data)
     .catch(error => {
       console.log('PrestadorService', error);

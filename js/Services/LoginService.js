@@ -3,7 +3,7 @@ import { Headers } from '../Constantes.js';
 
 export function RealizarLogin(usuario, senha) {
     const data = {
-        userID: usuario,
+        email: usuario,
         password: senha
     };    
 

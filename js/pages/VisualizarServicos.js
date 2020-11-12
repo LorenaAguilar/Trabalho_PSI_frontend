@@ -1,5 +1,17 @@
-import { getTokenDecodificado, EstaLogado } from '../Services/LoginService.js';
+import { getTokenDecodificado, EstaLogado, Deslogar } from '../Services/LoginService.js';
 import { GetTodosMunicipios } from '../Services/MunicipiosService.js'; 
+
+if(EstaLogado()) {
+  document.getElementById("botao_logout").onclick = () => {
+    Deslogar();
+    window.location.reload();
+  }
+} else {
+  var node = document.getElementById("botao_logout");
+  if (node.parentNode) {
+    node.parentNode.removeChild(node);
+  }
+}
 
 GetTodosMunicipios().then((response) => {
   const nomesBairros = response.map((item) => item.nome);
@@ -116,3 +128,9 @@ const inserirInformacoes = () =>{
       </div>
     </div>`)).join("");
 }
+
+
+
+
+
+
