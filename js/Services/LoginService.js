@@ -13,6 +13,7 @@ export function RealizarLogin(usuario, senha) {
             if(response.data.authenticated) {
                 localStorage.setItem('tokenUser', response.data.accessToken);
             }
+            return response.data;
         }).catch((error) => {
             console.log('LoginService', error);
             throw error;
