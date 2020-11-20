@@ -20,7 +20,8 @@ const submit = (event) => {
     telefone: whatsapp,
     linkFoto: foto,
     biografia: `Olá, meu nome é ${nomeCompleto}`,
-    tipo: TipoUsuario.contratante
+    tipo: TipoUsuario.contratante,
+    cpf: '555-555-555-55'
   };
 
   const divAviso = document.getElementById('aviso');

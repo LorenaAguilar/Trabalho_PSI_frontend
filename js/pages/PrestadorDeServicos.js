@@ -22,7 +22,8 @@ const submit = (event) => {
     telefone: whatsapp,
     linkFoto: foto,
     biografia: biografia,
-    tipo: TipoUsuario.prestadorDeServicos
+    tipo: TipoUsuario.prestadorDeServicos,
+    cpf: '555-555-555-55'
   };
 
   const divAviso = document.getElementById('aviso');
