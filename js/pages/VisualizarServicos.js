@@ -2,10 +2,12 @@ import { getTokenDecodificado, EstaLogado, Deslogar } from '../Services/LoginSer
 import { GetTodosMunicipios } from '../Services/MunicipiosService.js'; 
 import { getPrestador } from '../Services/PrestadorService.js';
 import { getTodosServicos } from '../Services/ListarServicosService.js';
+import { getURL } from '../functions.js'
+
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
     Deslogar();
-    window.location.reload();
+    window.location.pathname = `${getURL()}/index.html`;
   }
 } else {
   var node = document.getElementById("botao_logout");
