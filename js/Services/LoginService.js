@@ -7,7 +7,7 @@ export function RealizarLogin(usuario, senha) {
         password: senha
     };    
 
-    return axios.post(Login, data, Headers)
+    return axios.post(Login, data, {"content-type": Headers["content-type"]})
         .then(response => {
             console.log(response.data);
             if(response.data.authenticated) {

@@ -2,6 +2,12 @@ import { TipoUsuario } from '../Constantes.js';
 import { CadastrarUsuario } from '../Services/UsuarioService.js';
 import { GetTodosMunicipios } from '../Services/MunicipiosService.js';
 import { getURL } from '../functions.js'
+import { getPrestador } from '../Services/PrestadorService.js';
+import { encontrarIdServico } from '../Services/ServicosService.js';
+import { Deslogar, getToken, RealizarLogin } from '../Services/LoginService.js';
+import { cadastrarServicoPrestado } from '../Services/ServicosPrestadorService.js';
+import { cadastrarLocalDeAtendimento } from '../Services/LocaisDeAtendimentoService.js';
+import { encontrarUnidadesDeCobranca } from '../Services/UnidadesDeCobrancaService.js';
 
 const submit = (event) => {
   event.preventDefault();
@@ -14,6 +20,11 @@ const submit = (event) => {
   const foto = document.getElementById('inputNomeCompleto').value;
   const biografia = document.getElementById('inputBiografia').value;
   
+  const inputPreco = document.getElementById('inputPreco').value;
+  const inputServico = document.getElementById('inputServico').value;
+
+  const inputArea = document.getElementById('inputArea').value;
+
   const data = {
     email: usuario,
     password: senha,
@@ -27,26 +38,84 @@ const submit = (event) => {
   };
 
   const divAviso = document.getElementById('aviso');
+  Deslogar();
+
+  CadastrarUsuario(data).then(() => {
+    Deslogar();
+    setTimeout(() => {
+      RealizarLogin(data.email, data.password).then(() => {
+        setTimeout(() => {
+
+          let idServico, idPrestador;
+          encontrarIdServico(inputServico).then(response => {
+          idServico = response;
+
+          getPrestador(data.email).then((response) => {
+            idPrestador = response.id;
+
+            setTimeout(() => {
+              cadastrarServicoPrestado(idServico, idPrestador, 'c789afba-514a-489c-897c-2b3530a9d26b', inputPreco).then(() => {
+                console.info('deu tudo certo')
+              })
+            }, 1000);
+          });
   
-  CadastrarUsuario(data)
-  .then(response => {
-    if(response.result === "Succeeded") {
-      divAviso.innerHTML = 
-      `<div class="alert alert-success alert-dismissible fade show" role="alert">
-        O cadastro foi realizado com sucesso!
-      </div>`;
-    } else {
-      divAviso.innerHTML = 
-      `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Não foi possível realizar o cadastro!
-      </div>`;
-    }
-  }).catch(() => {
-    divAviso.innerHTML = 
-    `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      Não foi possível realizar o cadastro!
-    </div>`;
+            
+          }, 1000);
+        });
+
+       
+      }).catch(() => {
+        console.info('deu errado');
+      });
+    }, 500);
+  })
+  .catch(() => {
+    console.info('deu erro no cadastro')
   });
+
+
+  /* CadastrarUsuario(data).then(() => {
+    console.log('passou no cadastro');
+    Deslogar();
+
+    console.log('depois', getToken());
+    RealizarLogin(data.email, data.password).then(() => {
+      console.log('passou no login');
+
+     setTimeout(() => {
+      console.log('depois', getToken());
+      cadastrarServicoPrestado(encontrarIdServico(inputServico).then((response) => response), getPrestador(data.email).then((response) => response.id), encontrarUnidadesDeCobranca('hora').then((response) => response), inputPreco)
+      .then(() => {
+        console.log('passou no cadastrar servico prestado');
+        
+          cadastrarLocalDeAtendimento(inputArea, 'Minas Gerais', getPrestador(data.email).id)
+          .then(() => {
+            console.log('passou no cadastrar servico prestado');
+            divAviso.innerHTML = 
+              `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                O cadastro foi realizado com sucesso!
+              </div>`;
+          })
+          .catch(error => {
+            console.error('erro cadastrar servico prestado', error);
+          });
+        
+        
+      })
+      .catch(error => {
+        console.error('erro cadastrar servico prestado', error);
+      });
+     }, 100);
+
+    })
+    .catch(error => {
+      console.error('erro login', error);
+    });
+
+  }).catch(error => {
+    console.error('erro cadastro', error);
+  }); */
 }
 
 var botao = document.getElementById("botao_cadastrar");
