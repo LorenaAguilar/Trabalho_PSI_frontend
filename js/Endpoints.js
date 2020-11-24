@@ -8,7 +8,7 @@ export const Login = `${api}/api/login`;
 
 export const ListarServicos = `${api}/api/ListarServicos`;
 
-export const Prestador = `${api}/api/Prestador`;
+export const Prestador = `${api}/api/Prestadores`;
 
 export const UnidadesDeCobranca = `${api}/api/UnidadesDeCobranca`;
 
