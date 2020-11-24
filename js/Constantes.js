@@ -1,5 +1,8 @@
+import { getToken } from './Services/LoginService.js';
+
 export const Headers = {
-    'content-type': 'application/json'
+    'content-type': 'application/json',
+    headers: {Authorization: `Bearer ${getToken()}`}
 };
 
 export const TipoUsuario = {

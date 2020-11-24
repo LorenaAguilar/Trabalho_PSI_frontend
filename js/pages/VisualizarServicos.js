@@ -1,5 +1,6 @@
 import { getTokenDecodificado, EstaLogado, Deslogar } from '../Services/LoginService.js';
 import { GetTodosMunicipios } from '../Services/MunicipiosService.js'; 
+import { getPrestador } from '../Services/PrestadorService.js';
 
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
@@ -38,20 +39,12 @@ const getInformationLogin = () => {
     
     divElement.innerHTML = `<strong class="card-title">Bem vindo(a), ${unique_name[0]}! </strong>`;
 
-    /* const url = '';
-    const data = {
-      
-    };
-    const headers = {
-    'content-type': 'application/json'
-    }
 
-  
-    axios.get(url, data, headers)
+    getPrestador(unique_name[0])
     .then((response) => {
-      divElement.innerHTML = `<strong class="card-title">Bem vindo(a), ${response.data.nomeCompleto}! </strong>`;
+      divElement.innerHTML = `<strong class="card-title">Bem vindo(a), ${response.nomeCompleto}! </strong>`;
     })
-    .catch((erros) => console.log(erros)); */
+
   } else {
     const divElement = document.getElementById('sem-login');
 

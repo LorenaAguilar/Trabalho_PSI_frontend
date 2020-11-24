@@ -32,3 +32,7 @@ export function getTokenDecodificado () {
     const token = localStorage.getItem('tokenUser');    
     return JSON.parse(window.atob(token.split('.')[1]));
 }
+
+export function getToken () {
+    return localStorage.getItem('tokenUser');    
+}
