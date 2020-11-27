@@ -7,7 +7,7 @@ export function RealizarLogin(usuario, senha) {
         password: senha
     };    
 
-    return axios.post(Login, data, Headers)
+    return axios.post(Login, data, {"content-type": Headers["content-type"]})
         .then(response => {
             console.log(response.data);
             if(response.data.authenticated) {
@@ -31,4 +31,8 @@ export function Deslogar() {
 export function getTokenDecodificado () {
     const token = localStorage.getItem('tokenUser');    
     return JSON.parse(window.atob(token.split('.')[1]));
+}
+
+export function getToken () {
+    return localStorage.getItem('tokenUser');    
 }
