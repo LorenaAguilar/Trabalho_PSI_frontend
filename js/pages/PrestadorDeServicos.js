@@ -57,7 +57,7 @@ const submit = (event) => {
               cadastrarServicoPrestado(idServico, idPrestador, 'c789afba-514a-489c-897c-2b3530a9d26b', inputPreco).then(() => {
                 console.info('deu tudo certo')
               })
-            }, 1000);
+            }, 2000);
           });
   
             
