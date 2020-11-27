@@ -15,3 +15,7 @@ export const rolesUsuario = {
     Admin: "Admin-SSG_API",
     Cliente: "Contratante-SSG_API"
 }
+
+export const formaPagamento = ['dinheiro', 'débito', 'crédito'];
+
+export const statusOrdem = ['aguardando confirmação', 'em aberto', 'finalizado', 'cancelado'];
