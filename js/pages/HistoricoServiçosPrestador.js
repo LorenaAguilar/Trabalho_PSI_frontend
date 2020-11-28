@@ -70,14 +70,18 @@ const inserirInformacoes = (informations) =>{
     if(element.id.charAt(0) === "a") {
       element.onclick = (event) => {
         event.preventDefault();
-        atualizarOrdem(element.id.slice(2), 1).then(alert(`"A ordem foi atualizada para ${statusOrdem[1]}"`));
-        window.location.reload();
+        atualizarOrdem(element.id.slice(2), 1).then(() => {
+          alert(`"A ordem foi atualizada para ${statusOrdem[1]}"`);
+          window.location.reload();
+        });
       }
     } else if(element.id.charAt(0) === "r") {
       element.onclick = (event) => {
         event.preventDefault();
-        atualizarOrdem(element.id.slice(2), 3).then(alert(`"A ordem foi atualizada para ${statusOrdem[3]}"`));
-        window.location.reload();
+        atualizarOrdem(element.id.slice(2), 3).then(() => {
+          alert(`"A ordem foi atualizada para ${statusOrdem[3]}"`);
+          window.location.reload();
+        });
       }
     }
   });
