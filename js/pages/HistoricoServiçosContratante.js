@@ -69,8 +69,10 @@ const inserirInformacoes = (informations) =>{
   elements.forEach((element) => {
     element.onclick = (event) => {
       event.preventDefault();
-      atualizarOrdem(element.id, 3).then(alert(`"A ordem foi atualizada para ${statusOrdem[3]}"`));
-      window.location.reload();
+      atualizarOrdem(element.id, 3).then(() => {
+        alert(`"A ordem foi atualizada para ${statusOrdem[3]}"`);
+        window.location.reload();
+      });
     }
   });
 }
