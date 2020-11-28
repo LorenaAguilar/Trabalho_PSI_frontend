@@ -37,10 +37,12 @@ GetTodosMunicipios().then((response) => {
 
   var elements = document.querySelectorAll("button");
   elements.forEach((element) => {
-    element.onclick = (event) => {
-      event.preventDefault();
-      setIdServicoPrestador(element.id);
-  window.location.pathname = `${getURL()}/src/contratar_serviços.html`;
+      if(element.id !== 'botaoFiltrar') {
+        element.onclick = (event) => {
+        event.preventDefault();
+        setIdServicoPrestador(element.id);
+        window.location.pathname = `${getURL()}/src/contratar_serviços.html`;
+      }
     }
   });
 });
@@ -103,23 +105,22 @@ const inserirInformacoes = () =>{
     }
   });
   
-  
   const filtros = {
     servico: document.getElementById('select_servico').value,
     regiao: document.getElementById('select_regiao').value
   }
-
+  let informacoesFiltradas = informations;
   if(filtros.regiao !== 'null') {
-    informations = informations.filter((information) => information.regiao === filtros.regiao)
+    informacoesFiltradas = informations.filter((information) => information.regiao === filtros.regiao)
   }
 
   if(filtros.servico !== 'null') {
-    informations = informations.filter((information) => information.servico === filtros.servico)
+    informacoesFiltradas = informations.filter((information) => information.servico === filtros.servico)
   }
 
   const listaServicos = document.getElementById('listaServicos');
 
-  listaServicos.innerHTML = informations.map((information) =>(`
+  listaServicos.innerHTML = informacoesFiltradas.map((information) =>(`
     <div id="containerServicoPrestado" class="row">
       <div id="campoImagem" class="col-2">
         <img src= ${information.imagem} />
