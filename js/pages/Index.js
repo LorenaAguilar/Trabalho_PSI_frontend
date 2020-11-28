@@ -3,7 +3,6 @@ import { rolesUsuario } from '../Constantes.js';
 import { getURL } from '../functions.js'
 
 FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
     console.log('chegou')
 });
 
