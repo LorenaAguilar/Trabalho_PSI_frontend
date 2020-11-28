@@ -89,11 +89,11 @@ const inserirInformacoes = () =>{
   }
   let informacoesFiltradas = informations;
   if(filtros.regiao !== 'null') {
-    informacoesFiltradas = informations.filter((information) => information.cidade === filtros.regiao)
+    informacoesFiltradas = informacoesFiltradas.filter((information) => information.cidade === filtros.regiao)
   }
 
   if(filtros.servico !== 'null') {
-    informacoesFiltradas = informations.filter((information) => information.categoriaServico.capitalize() === filtros.servico)
+    informacoesFiltradas = informacoesFiltradas.filter((information) => information.categoriaServico.capitalize() === filtros.servico)
   }
 
   const listaServicos = document.getElementById('listaServicos');
