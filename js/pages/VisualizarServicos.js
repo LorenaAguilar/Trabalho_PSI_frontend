@@ -39,6 +39,17 @@ GetTodosMunicipios().then((response) => {
       informations = response;
       inserirInformacoes();
     }
+  }).catch(() => {
+    const listaServicos = document.getElementById('listaServicos');
+    listaServicos.innerHTML = `
+          <div id="containerServicoPrestado" class="row">
+            <div id="informacoes" class="col" style="display: flex; justify-content: center; align-content: center;" >
+              <strong id="informacoesPrestador" style="align-text: center"> 
+                <p>
+                  Faça login para poder ver os serviços prestador!
+                </p> 
+            </div>
+          </div>`;
   });
   
 }).then(() => {
@@ -129,6 +140,18 @@ const inserirInformacoes = () =>{
     </button>` : ''}
     </div>
     </div>`)).join("");
+
+    if(informacoesFiltradas.length === 0) {
+      listaServicos.innerHTML = `
+        <div id="containerServicoPrestado" class="row">
+          <div id="informacoes" class="col" style="display: flex; justify-content: center;" >
+            <strong id="informacoesPrestador"> 
+              <p>
+                Foram encontrados 0 serviços!
+              </p> 
+          </div>
+        </div>`;
+    }
 
     var elements = document.querySelectorAll("button");
     elements.forEach((element) => {

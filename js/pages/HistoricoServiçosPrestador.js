@@ -20,6 +20,18 @@ listarHistoricoServicos().then(response => {
   if(response.message !== 'Nenhum serviço prestado cadastrado') {
     inserirInformacoes(response);
   }
+})
+.catch(() => {
+  const listaServicos = document.getElementById('listaServicos');
+  listaServicos.innerHTML = `
+        <div id="containerServicoPrestado" class="row">
+          <div id="informacoes" class="col" style="display: flex; justify-content: center;" >
+            <strong id="informacoesPrestador" style="align-text: center"> 
+              <p>
+                Você ainda não possui ordens de serviço!
+              </p> 
+          </div>
+        </div>`;
 });
 
 const inserirInformacoes = (informations) =>{  
@@ -64,6 +76,18 @@ const inserirInformacoes = (informations) =>{
 
       </div>
     </div>`)).join("");
+
+    if(informations.length === 0) {
+      listaServicos.innerHTML = `
+        <div id="containerServicoPrestado" class="row">
+          <div id="informacoes" class="col" style="display: flex; justify-content: center;" >
+            <strong id="informacoesPrestador" style="align-text: center"> 
+              <p>
+                Você ainda não possui ordens de serviço!
+              </p> 
+          </div>
+        </div>`;
+    }
 
   var elements = document.querySelectorAll("button");
   elements.forEach((element) => {
