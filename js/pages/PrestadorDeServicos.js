@@ -17,7 +17,7 @@ const submit = (event) => {
   const nomeCompleto = document.getElementById('inputNomeCompleto').value;
   const endereco = document.getElementById('inputEndereco').value;
   const whatsapp = document.getElementById('inputWpp').value;
-  const foto = document.getElementById('inputNomeCompleto').value;
+  const foto = document.getElementById('inputFoto').value;
   const biografia = document.getElementById('inputBiografia').value;
   
   const inputPreco = document.getElementById('inputPreco').value;
@@ -51,7 +51,7 @@ const submit = (event) => {
           idServico = response;
 
           getPrestador(data.email).then((response) => {
-            idPrestador = response[0].id;
+            idPrestador = response.id;
 
             cadastrarLocalDeAtendimento(inputArea, 'Minas Gerais', idPrestador).then(() => {
               encontrarUnidadesDeCobranca('Hora').then((idUnidadeCobranca) => {

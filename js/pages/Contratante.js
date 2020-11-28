@@ -10,7 +10,7 @@ const submit = (event) => {
   const senha = document.getElementById('inputSenha').value;
   const endereco = document.getElementById('inputEndereco').value;
   const whatsapp = document.getElementById('inputWpp').value;
-  const foto = document.getElementById('inputNomeCompleto').value;
+  const foto = document.getElementById('inputFoto').value;
     
   const data = {
     email: usuario,
