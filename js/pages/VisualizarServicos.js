@@ -47,7 +47,6 @@ GetTodosMunicipios().then((response) => {
   inserirInformacoes();
   var elements = document.querySelectorAll("button");
   elements.forEach((element) => {
-      console.log(element.id)
       if(element.id !== 'botaoFiltrar' && element.id !== 'botao_historico_servicos') {
         element.onclick = (event) => {
         event.preventDefault();
