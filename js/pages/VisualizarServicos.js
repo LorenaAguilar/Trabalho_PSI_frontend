@@ -125,7 +125,7 @@ const inserirInformacoes = () =>{
         </strong>
         </div>
         <div id="container_buttons">
-        <button id="contratar" ${!EstaLogado() ? 'disabled=true' : ''} id="${information.servicoprestado}">
+        <button ${!EstaLogado() ? 'disabled=true' : ''} id="${information.servicoprestado}">
         Contratar serviços
     </button>
     </div>
