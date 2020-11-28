@@ -62,9 +62,7 @@ const submit = (event) => {
             });
           });
           }, 2000);
-        });
-
-       
+        });       
       }).catch(() => {
         console.info('deu errado');
       });
@@ -73,49 +71,6 @@ const submit = (event) => {
   .catch(() => {
     console.info('deu erro no cadastro')
   });
-
-
-  /* CadastrarUsuario(data).then(() => {
-    console.log('passou no cadastro');
-    Deslogar();
-
-    console.log('depois', getToken());
-    RealizarLogin(data.email, data.password).then(() => {
-      console.log('passou no login');
-
-     setTimeout(() => {
-      console.log('depois', getToken());
-      cadastrarServicoPrestado(encontrarIdServico(inputServico).then((response) => response), getPrestador(data.email).then((response) => response.id), encontrarUnidadesDeCobranca('hora').then((response) => response), inputPreco)
-      .then(() => {
-        console.log('passou no cadastrar servico prestado');
-        
-          cadastrarLocalDeAtendimento(inputArea, 'Minas Gerais', getPrestador(data.email).id)
-          .then(() => {
-            console.log('passou no cadastrar servico prestado');
-            divAviso.innerHTML = 
-              `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                O cadastro foi realizado com sucesso!
-              </div>`;
-          })
-          .catch(error => {
-            console.error('erro cadastrar servico prestado', error);
-          });
-        
-        
-      })
-      .catch(error => {
-        console.error('erro cadastrar servico prestado', error);
-      });
-     }, 100);
-
-    })
-    .catch(error => {
-      console.error('erro login', error);
-    });
-
-  }).catch(error => {
-    console.error('erro cadastro', error);
-  }); */
 }
 
 var botao = document.getElementById("botao_cadastrar");

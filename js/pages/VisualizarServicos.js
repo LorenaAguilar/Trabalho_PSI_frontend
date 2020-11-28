@@ -37,7 +37,6 @@ GetTodosMunicipios().then((response) => {
 
   var elements = document.querySelectorAll("button");
   elements.forEach((element) => {
-    console.log(element)
     element.onclick = (event) => {
       event.preventDefault();
       setIdServicoPrestador(element.id);

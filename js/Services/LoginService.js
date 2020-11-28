@@ -9,7 +9,6 @@ export function RealizarLogin(usuario, senha) {
 
     return axios.post(Login, data, {"content-type": Headers["content-type"]})
         .then(response => {
-            console.log(response.data);
             if(response.data.authenticated) {
                 sessionStorage.setItem('tokenUser', response.data.accessToken);
             }

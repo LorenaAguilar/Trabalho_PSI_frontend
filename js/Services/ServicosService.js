@@ -12,7 +12,6 @@ export function getTodosServicos () {
 
 export function encontrarIdServico(nome) {
     return getTodosServicos().then((todosServicos) => {
-      console.log(todosServicos);
         return todosServicos.find(servico => servico.nome === nome.toUpperCase()).id;
     });
 };
