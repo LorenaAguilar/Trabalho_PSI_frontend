@@ -17,3 +17,7 @@ export const ServicosPrestados = `${api}/api/ServicosPrestados`;
 export const Servicos = `${api}/api/Servicos`;
 
 export const LocaisDeAtendimento = `${api}/api/LocaisDeAtendimento`;
+
+export const Ordem = `${api}/api/OrdensDeServico`;
+
+export const HistoricoServicos = `${api}/api/HistoricoDeServicos`;
