@@ -80,7 +80,17 @@ const inserirInformacoes = () =>{
           <p>
             Biografia: ${information.biografia}
           </p>
+         
         </strong>
+       
+        
+      </div>
+      <div id="container_buttons" >
+     
+      
+    <button style="background-color: red;">
+        Cancelar serviço
+    </button>
       </div>
     </div>`)).join("");
 }
