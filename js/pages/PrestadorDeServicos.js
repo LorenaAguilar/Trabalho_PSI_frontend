@@ -53,13 +53,15 @@ const submit = (event) => {
           getPrestador(data.email).then((response) => {
             idPrestador = response[0].id;
 
-            encontrarUnidadesDeCobranca('Hora').then((idUnidae) => {
-              setTimeout(() => {
-                cadastrarServicoPrestado(idServico, idPrestador, idUnidae, inputPreco).then(() => {
-                  console.info('deu tudo certo')
-                })
-              }, 2000);
-            });
+            cadastrarLocalDeAtendimento(inputArea, 'Minas Gerais', idPrestador).then(() => {
+              encontrarUnidadesDeCobranca('Hora').then((idUnidadeCobranca) => {
+                setTimeout(() => {
+                  cadastrarServicoPrestado(idServico, idPrestador, idUnidadeCobranca, inputPreco).then(() => {
+                    console.info('deu tudo certo')
+                  })
+                }, 2000);
+              });
+            })
           });
           }, 2000);
         });       
