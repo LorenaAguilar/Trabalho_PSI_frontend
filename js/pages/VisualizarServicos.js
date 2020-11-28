@@ -14,6 +14,8 @@ if(EstaLogado()) {
   if (node.parentNode) {
     node.parentNode.removeChild(node);
   }
+
+
 }
 
 GetTodosMunicipios().then((response) => {
@@ -128,11 +130,12 @@ const inserirInformacoes = () =>{
             Biografia: ${information.biografia}
           </p>
         </strong>
+        <button ${!EstaLogado() ? 'disabled=true' : ''} >
+        Contratar serviços
+    </button>
       </div>
     </div>`)).join("");
 }
-
-
 
 
 
