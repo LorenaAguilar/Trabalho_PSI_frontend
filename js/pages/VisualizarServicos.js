@@ -43,9 +43,12 @@ GetTodosMunicipios().then((response) => {
     inserirInformacoes();
   }
 
+  setTimeout(() => {
+  inserirInformacoes();
   var elements = document.querySelectorAll("button");
   elements.forEach((element) => {
-      if(element.id !== 'botaoFiltrar') {
+      console.log(element.id)
+      if(element.id !== 'botaoFiltrar' && element.id !== 'botao_historico_servicos') {
         element.onclick = (event) => {
         event.preventDefault();
         setIdServicoPrestador(element.id);
@@ -53,8 +56,6 @@ GetTodosMunicipios().then((response) => {
       }
     }
   });
-  setTimeout(() => {
-  inserirInformacoes();
   }, 500)
 });
 
