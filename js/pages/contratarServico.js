@@ -72,9 +72,12 @@ function getInformacoesServicoEscolhido() {
               Biografia: ${information.biografia}
             </p>
           </strong>
-          <button >
-              Contratar serviços
-          </button>
+         
+        </div>
+        <div id="container_buttons">
+        <button >
+            Contratar serviços
+        </button>
         </div>
       </div>`
     );
