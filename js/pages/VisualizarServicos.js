@@ -3,6 +3,7 @@ import { GetTodosMunicipios } from '../Services/MunicipiosService.js';
 import { getPrestador } from '../Services/PrestadorService.js';
 import { getTodosServicos } from '../Services/ListarServicosService.js';
 import { getURL } from '../functions.js'
+import { setIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
 
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
@@ -33,6 +34,16 @@ GetTodosMunicipios().then((response) => {
     event.preventDefault();
     inserirInformacoes();
   }
+
+  var elements = document.querySelectorAll("button");
+  elements.forEach((element) => {
+    console.log(element)
+    element.onclick = (event) => {
+      event.preventDefault();
+      setIdServicoPrestador(element.id);
+  window.location.pathname = `${getURL()}/src/contratar_serviços.html`;
+    }
+  });
 });
 
 const getInformationLogin = () => {
@@ -57,6 +68,7 @@ const getInformationLogin = () => {
 }
 
 let informations = [{
+  id: '3',
   nome: "Leonardo Da Vinci",
   servico: "Pintor",
   regiao: "Sarzedo",
@@ -65,6 +77,7 @@ let informations = [{
   imagem: "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2019/06/24/leo.jpg"
 },
 {
+  id: '2',
   nome: "Mario Bros",
   servico: "Encanamento",
   regiao: "Belo Horizonte",
@@ -73,6 +86,7 @@ let informations = [{
   imagem: "https://ecom.amenworld.com/WebRoot/ce_pt/Shops/228523/5A6B/010B/A45B/77D1/CABA/C0A8/1911/3EEC/mario-2_m.png"
 },
 {
+  id: '1',
   nome: "Dobby",
   servico: "Limpeza geral",
   regiao: "Santa Luzia",
@@ -130,13 +144,9 @@ const inserirInformacoes = () =>{
             Biografia: ${information.biografia}
           </p>
         </strong>
-        <button ${!EstaLogado() ? 'disabled=true' : ''} >
+        <button ${!EstaLogado() ? 'disabled=true' : ''} id="${information.id}">
         Contratar serviços
     </button>
       </div>
     </div>`)).join("");
 }
-
-
-
-
