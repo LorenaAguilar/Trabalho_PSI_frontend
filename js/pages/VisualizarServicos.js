@@ -6,7 +6,7 @@ import { getURL } from '../functions.js'
 import { setIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
 import { getTipoUsuario, setEmailUsuario, setIdUsuario} from '../stores/UsuarioStore.js';
 import { rolesUsuario } from '../Constantes.js';
-import { getContratante } from '../services/ContratanteService.js';
+import { getContratante } from '../Services/ContratanteService.js';
 
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
