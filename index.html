@@ -52,6 +52,13 @@
                   <input type="password" class="form-control" id="inputSenha" />
                 </div>
                 <div class="container_login">
+                  <fb:login-button
+                    style="margin-top: 45px; margin-right: 8px"
+                    scope="public_profile,email"
+                    onlogin="checkLoginState();"
+                  >
+                  </fb:login-button>
+
                   <button id="botao_login" class="botao_login">Login</button>
                 </div>
               </fieldset>

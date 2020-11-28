@@ -2,9 +2,12 @@ import { RealizarLogin } from '../Services/LoginService.js';
 import { rolesUsuario } from '../Constantes.js';
 import { getURL } from '../functions.js'
 
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
+
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
+}
 
 const login = (event) => {
     event.preventDefault();
