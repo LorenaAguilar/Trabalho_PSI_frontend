@@ -12,6 +12,6 @@ export function getTodasUnidadesDeCobranca () {
 
 export function encontrarUnidadesDeCobranca(unidade) {
     return getTodasUnidadesDeCobranca().then((todasUnidadesDeCobranca) => {
-        return todasUnidadesDeCobranca.find(todasUnidadesDeCobranca.unidade === unidade).id;
+        return todasUnidadesDeCobranca.find((aux) => aux.unidade === unidade).id;
     });
 };
