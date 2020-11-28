@@ -51,7 +51,7 @@ const submit = (event) => {
           idServico = response;
 
           getPrestador(data.email).then((response) => {
-            idPrestador = response.id;
+            idPrestador = response[0].id;
 
             encontrarUnidadesDeCobranca('Hora').then((idUnidae) => {
               setTimeout(() => {
@@ -60,12 +60,8 @@ const submit = (event) => {
                 })
               }, 2000);
             });
-
-            
           });
-  
-            
-          }, 1000);
+          }, 2000);
         });
 
        
