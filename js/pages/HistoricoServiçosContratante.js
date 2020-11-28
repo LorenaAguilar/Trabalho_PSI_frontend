@@ -1,6 +1,8 @@
 import {  EstaLogado, Deslogar } from '../Services/LoginService.js';
 import { listarHistoricoServicos } from '../Services/ListarOrdensService.js';
 import { getURL } from '../functions.js'
+import { statusOrdem } from '../Constantes.js';
+import { atualizarOrdem } from '../Services/OrdemService.js';
 
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
@@ -45,21 +47,30 @@ const inserirInformacoes = (informations) =>{
           <p>
           Dia marcado: ${(new Date(information.data).toLocaleDateString())} 
           </p>
+          <p>
+          Situação: ${statusOrdem[information.situacao]}
+          </p>
           <hr />
           <p>
             Biografia: ${information.biografia}
           </p>
-         
         </strong>
-       
-        
       </div>
       <div id="container_buttons" >
-     
-      
-    <button id="${information.ordemServico}" style="background-color: red;">
-        Cancelar serviço
-    </button>
+        ${statusOrdem[information.situacao] === "Cancelado" || statusOrdem[information.situacao] === "Finalizado" ? 
+        '' : 
+        `<button id="${information.ordemDeServico}" style="background-color: red;">
+          Cancelar serviço
+        </button>`}
       </div>
     </div>`)).join("");
+
+  var elements = document.querySelectorAll("button");
+  elements.forEach((element) => {
+    element.onclick = (event) => {
+      event.preventDefault();
+      atualizarOrdem(element.id, 3).then(alert(`"A ordem foi atualizada para ${statusOrdem[3]}"`));
+      window.location.reload();
+    }
+  });
 }

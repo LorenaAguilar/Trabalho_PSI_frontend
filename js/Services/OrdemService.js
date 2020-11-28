@@ -23,26 +23,13 @@ export function cadastrarOrdem (prestador, contratante, servicoPrestado, dataSer
 }
 
 export function atualizarOrdem (
-  prestador, 
-  contratante, 
-  servicoPrestado, 
-  dataServico, 
-  preco, 
-  endereco,
+  idservicoPrestado, 
   status) {
   const data = {
-    prestador, 
-    contratante, 
-    servicoPrestado, 
-    data: new Date(dataServico).toISOString(), 
-    preco: Number(preco), 
-    endereco,
-    resumo: 'resumo',
-    formaPagamento: 0,
     status: Number(status)
   };
   
-  return axios.put(Ordem, data, Headers)
+  return axios.put(`${Ordem}/${idservicoPrestado}`, data, Headers)
     .then(response => response.data)
     .catch(error => {
       console.log('OrdemService', error);
@@ -51,7 +38,7 @@ export function atualizarOrdem (
 }
 
 export function getOrdemById (id) {  
-  return axios.get(Ordem.concat('?id=', id), data, Headers)
+  return axios.get(`${Ordem}/${id}`, data, Headers)
     .then(response => response.data)
     .catch(error => {
       console.log('OrdemService', error);

@@ -18,4 +18,4 @@ export const rolesUsuario = {
 
 export const formaPagamento = ['dinheiro', 'débito', 'crédito'];
 
-export const statusOrdem = ['aguardando confirmação', 'em aberto', 'finalizado', 'cancelado'];
+export const statusOrdem = ['Aguardando confirmação', 'Em aberto', 'Finalizado', 'Cancelado'];
