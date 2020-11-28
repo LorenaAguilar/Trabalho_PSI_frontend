@@ -9,7 +9,7 @@ export function cadastrarOrdem (prestador, contratante, servicoPrestado, dataSer
     data: new Date(dataServico), 
     preco: Number(preco), 
     endereco,
-    resumo = 'resumo',
+    resumo: 'resumo',
     formaPagamento: 0,
     status: Number(status)
   };
