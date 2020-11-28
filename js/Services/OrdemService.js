@@ -1,7 +1,7 @@
 import { Ordem } from '../Endpoints.js';
 import { Headers } from '../Constantes.js';
 
-export function cadastrarOrdem (prestador, contratante, servicoPrestado, dataServico, preco, endereco, resumo, formaPagamento, status) {
+export function cadastrarOrdem (prestador, contratante, servicoPrestado, dataServico, preco, endereco, status) {
   const data = {
     prestador, 
     contratante, 
@@ -9,8 +9,8 @@ export function cadastrarOrdem (prestador, contratante, servicoPrestado, dataSer
     data: new Date(dataServico), 
     preco: Number(preco), 
     endereco,
-    resumo,
-    formaPagamento: Number(formaPagamento),
+    resumo = 'resumo',
+    formaPagamento: 0,
     status: Number(status)
   };
   
@@ -29,8 +29,6 @@ export function atualizarOrdem (
   dataServico, 
   preco, 
   endereco,
-  resumo,
-  formaPagamento,
   status) {
   const data = {
     prestador, 
@@ -39,8 +37,8 @@ export function atualizarOrdem (
     data: new Date(dataServico), 
     preco: Number(preco), 
     endereco,
-    resumo,
-    formaPagamento: Number(formaPagamento),
+    resumo: 'resumo',
+    formaPagamento: 0,
     status: Number(status)
   };
   
