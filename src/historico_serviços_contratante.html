@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizar serviços</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+    <link rel="stylesheet" href="../css/visualizar_servicos.css" />
+  </head>
+  <body id="visualizar_servicos">
+    <div id="container">
+      <header class="page-header">
+
+        
+        <div class="top-bar-container">
+          <a href="../index.html">
+            <img src="../img/back.svg" alt="Voltar"
+          /></a>
+          <a id="botao_logout">
+            <img src="../img/log-out.svg"  alt="Logout"
+          /></a>
+        </div>
+
+      
+        <div class="header-content">
+          <div id="text-content">
+          <div id="login-sucesso"></div>
+          <strong>Serviços Prestados</strong>
+          <p id="sem-login" class="card-text">
+            Abaixo você pode encontrar nossos serviços prestados
+          </p>
+        </div>
+       
+         
+          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+          <script type="module" src="../js/pages/HistoricoServiçosContratante.js"></script>
+        </div>
+      </header>
+
+      <div id="listaServicos">
+    </div>
+  </body>
+</html>
