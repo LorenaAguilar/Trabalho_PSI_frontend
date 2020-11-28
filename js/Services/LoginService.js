@@ -11,7 +11,7 @@ export function RealizarLogin(usuario, senha) {
         .then(response => {
             console.log(response.data);
             if(response.data.authenticated) {
-                localStorage.setItem('tokenUser', response.data.accessToken);
+                sessionStorage.setItem('tokenUser', response.data.accessToken);
             }
             return response.data;
         }).catch((error) => {
@@ -21,18 +21,18 @@ export function RealizarLogin(usuario, senha) {
 };
 
 export function EstaLogado() {
-    return localStorage.getItem('tokenUser') !== null;
+    return sessionStorage.getItem('tokenUser') !== null;
 } 
 
 export function Deslogar() {
-    localStorage.removeItem('tokenUser');
+    sessionStorage.removeItem('tokenUser');
 }
 
 export function getTokenDecodificado () {
-    const token = localStorage.getItem('tokenUser');    
+    const token = sessionStorage.getItem('tokenUser');    
     return JSON.parse(window.atob(token.split('.')[1]));
 }
 
 export function getToken () {
-    return localStorage.getItem('tokenUser');    
+    return sessionStorage.getItem('tokenUser');    
 }
