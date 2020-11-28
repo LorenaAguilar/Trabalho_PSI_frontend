@@ -2,6 +2,8 @@ import { existeIdServicoPrestador, getIdServicoPrestador } from '../stores/Servi
 import { getURL } from '../functions.js'
 import { getTodosServicos } from '../Services/ListarServicosService.js';
 import { cadastrarOrdem } from '../Services/OrdemService.js'
+import { getIdUsuario, getEmailUsuario } from '../stores/UsuarioStore.js';
+import { getContratante } from '../Services/ContratanteService.js';
 
 if(existeIdServicoPrestador()) {
     getTodosServicos().then((response) => {
@@ -60,8 +62,22 @@ function getInformacoesServicoEscolhido(informations) {
   );
   document.getElementById("contratar").onclick = (event) => {
     event.preventDefault();
-
-    const teste = document.getElementById("inputData").value;
+    const data = document.getElementById("inputData").value;
+    if(data) {
+      getContratante(getEmailUsuario()).then((response) => {
+        cadastrarOrdem(
+          information.prestador, 
+          getIdUsuario(), 
+          information.servicoprestado,
+          data, 
+          information.preco, 
+          response.endereco, 
+          0)
+        .then(alert('Cadastro Realizado com sucesso'));
+    });
+    } else {
+      alert('Por favor, insira um valor ao campo data.')
+    }
   } 
 }
 

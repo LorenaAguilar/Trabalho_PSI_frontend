@@ -23,3 +23,16 @@ export const setIdUsuario = (value) => {
 export const existeIdUsuario = () => {
     return sessionStorage.getItem('user-id') !== null;
 }
+
+//Email
+export const getEmailUsuario = () => {
+    return sessionStorage.getItem('user-email');
+}
+
+export const setEmailUsuario = (value) => {
+    return sessionStorage.setItem('user-email', value);
+}
+
+export const existeEmailUsuario = () => {
+    return sessionStorage.getItem('user-email') !== null;
+}

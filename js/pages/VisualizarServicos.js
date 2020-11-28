@@ -4,10 +4,9 @@ import { getPrestador } from '../Services/PrestadorService.js';
 import { getTodosServicos } from '../Services/ListarServicosService.js';
 import { getURL } from '../functions.js'
 import { setIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
-import { getTipoUsuario} from '../stores/UsuarioStore.js';
+import { getTipoUsuario, setEmailUsuario, setIdUsuario} from '../stores/UsuarioStore.js';
 import { rolesUsuario } from '../Constantes.js';
 import { getContratante } from '../services/ContratanteService.js';
-import { setIdUsuario } from '../stores/UsuarioStore.js';
 
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
@@ -56,7 +55,8 @@ const getInformationLogin = () => {
     const { unique_name } = getTokenDecodificado();
     
     divElement.innerHTML = `<strong class="card-title">Bem vindo(a), ${unique_name[0]}! </strong>`;
-
+    setEmailUsuario(unique_name[0]);
+    
     if(getTipoUsuario() === rolesUsuario.Cliente) {
       getContratante(unique_name[0])
       .then((response) => {
