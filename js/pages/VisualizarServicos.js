@@ -51,7 +51,7 @@ GetTodosMunicipios().then((response) => {
   inserirInformacoes();
   var elements = document.querySelectorAll("button");
   elements.forEach((element) => {
-      if(element.id !== 'botaoFiltrar' && element.id !== 'botao_historico_servicos') {
+      if(getTipoUsuario() === rolesUsuario.Cliente && element.id !== 'botaoFiltrar' && element.id !== 'botao_historico_servicos') {
         element.onclick = (event) => {
         event.preventDefault();
         setIdServicoPrestador(element.id);
@@ -137,11 +137,10 @@ const inserirInformacoes = () =>{
         </strong>
         </div>
         <div id="container_buttons">
-        <button ${getTipoUsuario() === rolesUsuario.Cliente ? '' : 'disabled=true'} id="${information.servicoprestado}">
+        ${getTipoUsuario() === rolesUsuario.Cliente ? `<button  id="${information.servicoprestado}">
         Contratar serviços
-    </button>
+    </button>` : ''}
     </div>
-     
     </div>`)).join("");
 }
 
