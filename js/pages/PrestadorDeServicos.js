@@ -53,11 +53,15 @@ const submit = (event) => {
           getPrestador(data.email).then((response) => {
             idPrestador = response.id;
 
-            setTimeout(() => {
-              cadastrarServicoPrestado(idServico, idPrestador, 'c789afba-514a-489c-897c-2b3530a9d26b', inputPreco).then(() => {
-                console.info('deu tudo certo')
-              })
-            }, 2000);
+            encontrarUnidadesDeCobranca('Hora').then((idUnidae) => {
+              setTimeout(() => {
+                cadastrarServicoPrestado(idServico, idPrestador, idUnidae, inputPreco).then(() => {
+                  console.info('deu tudo certo')
+                })
+              }, 2000);
+            });
+
+            
           });
   
             
