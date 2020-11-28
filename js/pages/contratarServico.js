@@ -1,4 +1,4 @@
-import { existeIdServicoPrestador, getIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
+import { existeIdServicoPrestador, getIdServicoPrestador, removeIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
 import { getURL } from '../functions.js'
 import { getTodosServicos } from '../Services/ListarServicosService.js';
 import { cadastrarOrdem } from '../Services/OrdemService.js'
@@ -73,7 +73,11 @@ function getInformacoesServicoEscolhido(informations) {
           information.preco, 
           response.endereco, 
           0)
-        .then(alert('Cadastro Realizado com sucesso'));
+        .then(() => {
+          alert('Cadastro Realizado com sucesso');
+          removeIdServicoPrestador();
+          window.location.pathname = `${getURL()}/src/visualizar_serviços.html`;
+        });
     });
     } else {
       alert('Por favor, insira um valor ao campo data.')

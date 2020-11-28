@@ -10,3 +10,7 @@ export const setIdServicoPrestador  = (value) => {
 export const existeIdServicoPrestador  = () => {
     return sessionStorage.getItem('ServicoPrestador-Id') !== null;
 }
+
+export const removeIdServicoPrestador = () => {
+    sessionStorage.removeItem('ServicoPrestador-Id');
+}
