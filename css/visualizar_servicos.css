@@ -106,6 +106,25 @@
   text-align: center;
 }
 
+#containerServicoPrestado button {
+  width: 100%;
+  height: 5rem;
+  border-radius: 0.8rem;
+  background-color: green;
+  color: #000000;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  font: 800 1.6rem Vidaloka;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+
 #buscar_prestador button {
   width: 100%;
   height: 5.6rem;
@@ -155,6 +174,13 @@
   width: inherit;
   height: auto;
 }
+
+#container_buttons {
+  width: 98%;
+  margin: 3rem;
+  margin-block: auto;
+}
+
 @media (min-width: 700px) {
   #buscar_prestador {
     display: flex;
@@ -186,6 +212,32 @@
   #visualizar_servicos #container {
     max-width: 100vw;
     max-height: 700px;
+  }
+
+  #container_buttons {
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  #containerServicoPrestado button {
+    width: 200px;
+    height: 5rem;
+    border-radius: 0.8rem;
+    background-color: green;
+    color: #000000;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    font: 800 1.6rem Vidaloka;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
   }
 
   .page-header .header-content strong {

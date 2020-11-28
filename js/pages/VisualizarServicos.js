@@ -149,9 +149,12 @@ const inserirInformacoes = () =>{
             Biografia: ${information.biografia}
           </p>
         </strong>
-        <button ${!EstaLogado() ? 'disabled=true' : ''} id="${information.prestador}">
+        </div>
+        <div id="container_buttons">
+        <button id="contratar" ${!EstaLogado() ? 'disabled=true' : ''} id="${information.prestador}">
         Contratar serviços
     </button>
-      </div>
+    </div>
+     
     </div>`)).join("");
 }
