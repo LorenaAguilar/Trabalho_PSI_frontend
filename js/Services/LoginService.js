@@ -1,5 +1,6 @@
 import { Login } from '../Endpoints.js';
 import { Headers } from '../Constantes.js';
+import { setTipoUsuario } from '../stores/UsuarioStore.js';
 
 export function RealizarLogin(usuario, senha) {
     const data = {
@@ -11,6 +12,7 @@ export function RealizarLogin(usuario, senha) {
         .then(response => {
             if(response.data.authenticated) {
                 sessionStorage.setItem('tokenUser', response.data.accessToken);
+                setTipoUsuario(response.data.roles[0]);
             }
             return response.data;
         }).catch((error) => {
