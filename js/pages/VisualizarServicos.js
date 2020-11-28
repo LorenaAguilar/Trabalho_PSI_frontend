@@ -4,7 +4,8 @@ import { getPrestador } from '../Services/PrestadorService.js';
 import { getTodosServicos } from '../Services/ListarServicosService.js';
 import { getURL } from '../functions.js'
 import { setIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
-
+import { getTipoUsuario} from '../stores/UsuarioStore.js'
+import {rolesUsuario} from '../Constantes.js'
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
     Deslogar();
@@ -156,4 +157,16 @@ const inserirInformacoes = () =>{
     </div>
      
     </div>`)).join("");
+}
+
+
+var botaoCancelar = document.getElementById("botao_historico_servicos");
+
+botaoCancelar.onclick = (event) => {
+  event.preventDefault();
+  if(getTipoUsuario()=== rolesUsuario.Prestador){
+  window.location.pathname = `${getURL()}/src/historico_serviços_prestador.html`;
+  } else {
+    window.location.pathname = `${getURL()}/src/historico_serviços_contratante.html`;
+  }
 }
