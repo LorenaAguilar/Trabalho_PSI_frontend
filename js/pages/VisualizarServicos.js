@@ -38,6 +38,7 @@ GetTodosMunicipios().then((response) => {
   .then(response => {
     if(response.message !== 'Nenhum serviço prestado cadastrado') {
       informations = response;
+      inserirInformacoes();
     }
   });
   
@@ -46,20 +47,6 @@ GetTodosMunicipios().then((response) => {
     event.preventDefault();
     inserirInformacoes();
   }
-
-  setTimeout(() => {
-  inserirInformacoes();
-  var elements = document.querySelectorAll("button");
-  elements.forEach((element) => {
-      if(getTipoUsuario() === rolesUsuario.Cliente && element.id !== 'botaoFiltrar' && element.id !== 'botao_historico_servicos') {
-        element.onclick = (event) => {
-        event.preventDefault();
-        setIdServicoPrestador(element.id);
-        window.location.pathname = `${getURL()}/src/contratar_serviços.html`;
-      }
-    }
-  });
-  }, 500)
 });
 
 const getInformationLogin = () => {
@@ -142,6 +129,17 @@ const inserirInformacoes = () =>{
     </button>` : ''}
     </div>
     </div>`)).join("");
+
+    var elements = document.querySelectorAll("button");
+    elements.forEach((element) => {
+      if(element.id !== 'botaoFiltrar' && element.id !== 'botao_historico_servicos') {
+        element.onclick = (event) => {
+        event.preventDefault();
+        setIdServicoPrestador(element.id);
+        window.location.pathname = `${getURL()}/src/contratar_serviços.html`;
+      }
+    }
+  });
 }
 
 
