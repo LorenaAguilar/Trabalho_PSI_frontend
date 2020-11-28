@@ -86,11 +86,10 @@ const inserirInformacoes = () =>{
         
       </div>
       <div id="container_buttons" >
-      <button  style="background-color: green;" >
-      Aceitar serviço
-        </button>
+     
+      
     <button style="background-color: red;">
-        Rejeitar serviço
+        Cancelar serviço
     </button>
       </div>
     </div>`)).join("");
