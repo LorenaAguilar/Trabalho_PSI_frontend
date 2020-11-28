@@ -21,3 +21,5 @@ export const LocaisDeAtendimento = `${api}/api/LocaisDeAtendimento`;
 export const Ordem = `${api}/api/OrdensDeServico`;
 
 export const HistoricoServicos = `${api}/api/HistoricoDeServicos`;
+
+export const Contratante = `${api}/api/Contratantes`;

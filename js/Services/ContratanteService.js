@@ -1,11 +1,11 @@
-import { Usuario } from '../Endpoints.js';
+import { Contratante } from '../Endpoints.js';
 import { Headers } from '../Constantes.js';
 
-export function CadastrarContrante (data) {          
-  return axios.post(Usuario, data, Headers)
-    .then(response => response.data)
-    .catch(error => { 
-      console.log('ContranteService', error);
-      throw error;
-    });
+export function getContratante (email) {
+  return axios.get(`${Contratante}?email=${email}`, Headers)
+  .then(response => response.data[0])
+  .catch(error => {
+    console.log('ContratanteService', error);
+    throw error;
+  });
 }
