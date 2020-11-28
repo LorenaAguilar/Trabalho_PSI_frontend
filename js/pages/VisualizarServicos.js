@@ -7,6 +7,7 @@ import { setIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
 import { getTipoUsuario} from '../stores/UsuarioStore.js';
 import { rolesUsuario } from '../Constantes.js';
 import { getContratante } from '../services/ContratanteService.js';
+import { setIdUsuario } from '../stores/UsuarioStore.js';
 
 if(EstaLogado()) {
   document.getElementById("botao_logout").onclick = () => {
@@ -72,12 +73,14 @@ const getInformationLogin = () => {
     if(getTipoUsuario() === rolesUsuario.Cliente) {
       getContratante(unique_name[0])
       .then((response) => {
+        setIdUsuario(response.id);
         divElement.innerHTML = `<strong class="card-title">Bem vindo(a), ${response.nomeCompleto}! </strong>`;
       })
     }
     else if(getTipoUsuario() === rolesUsuario.Prestador) {
       getPrestador(unique_name[0])
       .then((response) => {
+        setIdUsuario(response.id);
         divElement.innerHTML = `<strong class="card-title">Bem vindo(a), ${response.nomeCompleto}! </strong>`;
       })
     }
@@ -134,7 +137,7 @@ const inserirInformacoes = () =>{
         </strong>
         </div>
         <div id="container_buttons">
-        <button ${!EstaLogado() ? 'disabled=true' : ''} id="${information.servicoprestado}">
+        <button ${getTipoUsuario() === rolesUsuario.Cliente ? '' : 'disabled=true'} id="${information.servicoprestado}">
         Contratar serviços
     </button>
     </div>

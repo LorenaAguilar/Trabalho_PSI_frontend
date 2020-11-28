@@ -26,7 +26,7 @@ export function EstaLogado() {
 } 
 
 export function Deslogar() {
-    sessionStorage.removeItem('tokenUser');
+    sessionStorage.clear();
 }
 
 export function getTokenDecodificado () {
