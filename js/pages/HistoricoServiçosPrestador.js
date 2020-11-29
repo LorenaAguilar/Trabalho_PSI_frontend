@@ -40,12 +40,12 @@ const inserirInformacoes = (informations) =>{
   listaServicos.innerHTML = informations.map((information) =>(`
     <div id="containerServicoPrestado" class="row">
       <div id="campoImagem" class="col-2">
-        <img src= ${information.prestadorFoto} />
+        <img src= ${information.contratanteFoto} />
       </div>
       <div id="informacoes"  class="col-10" >
         <strong id="informacoesPrestador"> 
           <p>
-            Nome: ${information.prestadorNome}
+            Nome: ${information.contratanteNome}
           </p> 
           <p>
             Serviço: ${information.servico}
@@ -63,17 +63,14 @@ const inserirInformacoes = (informations) =>{
           Situação: ${statusOrdem[information.situacao]}
           </p>
           <hr />
-          <p>
-            Biografia: ${information.biografia}
-          </p>
         </strong>
       </div>
       <div id="container_buttons" >
+        ${statusOrdem[information.situacao] === "Aguardando confirmação"? 
+        `<button id="${`a-${information.ordemDeServico}`}" style="background-color: green;" > Aceitar serviço </button>` : ''}
         ${statusOrdem[information.situacao] === "Cancelado" || statusOrdem[information.situacao] === "Finalizado" ? 
         '' : 
-        `<button id="${`a-${information.ordemDeServico}`}" style="background-color: green;" > Aceitar serviço </button>
-        <button id="${`r-${information.ordemDeServico}`}" style="background-color: red;"> Rejeitar serviço </button>`}
-
+        `<button id="${`r-${information.ordemDeServico}`}" style="background-color: red;"> Rejeitar serviço </button>`}
       </div>
     </div>`)).join("");
 

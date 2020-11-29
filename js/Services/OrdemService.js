@@ -26,10 +26,11 @@ export function atualizarOrdem (
   idservicoPrestado, 
   status) {
   const data = {
+    id: idservicoPrestado,
     status: Number(status)
   };
   
-  return axios.put(`${Ordem}/${idservicoPrestado}`, data, Headers)
+  return axios.put(Ordem, data, Headers)
     .then(response => response.data)
     .catch(error => {
       console.log('OrdemService', error);
