@@ -1,4 +1,6 @@
+import { signInContranteFacebook } from '../../Services/facebook/CadastrarUsuario.js';
 import { getURL } from '../../functions.js';
+import { existeAuthTokenFacebook, getAuthTokenFacebook } from '../../stores/FacebookStore.js';
 
 /*
 if(!existeAuthTokenFacebook()) {
@@ -7,7 +9,7 @@ if(!existeAuthTokenFacebook()) {
 */
 
 const submit = (event) => {
-  event.preventDefault();
+  event.preventDefault(); 
 
   const endereco = document.getElementById('inputEndereco').value;
   if(!endereco) {
@@ -23,13 +25,17 @@ const submit = (event) => {
 
   const divAviso = document.getElementById('aviso');
     
-  CadastrarUsuario(data)
+  signInContranteFacebook(getAuthTokenFacebook(), endereco, whatsapp, "Olá", '555-555-555-55')
   .then(response => {
     if(response.result === "Succeeded") {
       divAviso.innerHTML = 
         `<div class="alert alert-success alert-dismissible fade show" role="alert">
           O cadastro foi realizado com sucesso!
         </div>`;
+
+        setTimeout(() => {
+          window.location.pathname = `${getURL()}/src/visualizar_serviços.html`;
+        }, 1000);
     } else {
       divAviso.innerHTML = 
         `<div class="alert alert-danger alert-dismissible fade show" role="alert">
