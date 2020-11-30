@@ -1,6 +1,6 @@
 import { Login } from '../Endpoints.js';
 import { Headers } from '../Constantes.js';
-import { setTipoUsuario } from '../stores/UsuarioStore.js';
+import { setTipoUsuario, setTokenUsuario, getTokenUsuario, existeTokenUsuario } from '../stores/UsuarioStore.js';
 
 export function RealizarLogin(usuario, senha) {
     const data = {
@@ -11,7 +11,7 @@ export function RealizarLogin(usuario, senha) {
     return axios.post(Login, data, {"content-type": Headers["content-type"]})
         .then(response => {
             if(response.data.authenticated) {
-                sessionStorage.setItem('tokenUser', response.data.accessToken);
+                setTokenUsuario(response.data.accessToken);
                 setTipoUsuario(response.data.roles[0]);
             }
             return response.data;
@@ -22,7 +22,7 @@ export function RealizarLogin(usuario, senha) {
 };
 
 export function EstaLogado() {
-    return sessionStorage.getItem('tokenUser') !== null;
+    return existeTokenUsuario();
 } 
 
 export function Deslogar() {
@@ -30,10 +30,10 @@ export function Deslogar() {
 }
 
 export function getTokenDecodificado () {
-    const token = sessionStorage.getItem('tokenUser');    
+    const token = getTokenUsuario();    
     return JSON.parse(window.atob(token.split('.')[1]));
 }
 
 export function getToken () {
-    return sessionStorage.getItem('tokenUser');    
+    return getTokenUsuario();    
 }

@@ -36,3 +36,16 @@ export const setEmailUsuario = (value) => {
 export const existeEmailUsuario = () => {
     return sessionStorage.getItem('user-email') !== null;
 }
+
+//Token
+export const getTokenUsuario = () => {
+    return sessionStorage.getItem('tokenUser');
+}
+
+export const setTokenUsuario = (value) => {1
+    return sessionStorage.setItem('tokenUser', value);
+}
+
+export const existeTokenUsuario = () => {
+    return sessionStorage.getItem('tokenUser') !== null;
+}

@@ -2,11 +2,9 @@ import { signInContranteFacebook } from '../../Services/facebook/CadastrarUsuari
 import { getURL } from '../../functions.js';
 import { existeAuthTokenFacebook, getAuthTokenFacebook } from '../../stores/FacebookStore.js';
 
-/*
 if(!existeAuthTokenFacebook()) {
   window.location.pathname = `${getURL()}/index.html`;
 }
-*/
 
 const submit = (event) => {
   event.preventDefault(); 
@@ -27,6 +25,8 @@ const submit = (event) => {
     
   signInContranteFacebook(getAuthTokenFacebook(), endereco, whatsapp, "Olá", '555-555-555-55')
   .then(response => {
+    console.log(response);
+
     if(response.result === "Succeeded") {
       divAviso.innerHTML = 
         `<div class="alert alert-success alert-dismissible fade show" role="alert">
