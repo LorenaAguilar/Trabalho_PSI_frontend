@@ -14,6 +14,7 @@ function checkLoginState() {
     });
 }
 
+document.getElementById("botao-facebook").onlogin =  checkLoginState;
 
 const login = (event) => {
     event.preventDefault();
