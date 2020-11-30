@@ -1,10 +1,11 @@
-import {  EstaLogado, Deslogar } from '../Services/LoginService.js';
+import { Deslogar } from '../Services/LoginService.js';
 import { getURL } from '../functions.js'
 import { statusOrdem } from '../Constantes.js';
 import { atualizarOrdem } from '../Services/OrdemService.js';
 import { listarHistoricoServicos } from '../Services/ListarOrdensService.js';
+import { existeTokenUsuario } from '../stores/UsuarioStore.js';
 
-if(EstaLogado()) {
+if(existeTokenUsuario()) {
   document.getElementById("botao_logout").onclick = () => {
     Deslogar();
     window.location.pathname = `${getURL()}/index.html`;

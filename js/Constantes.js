@@ -1,8 +1,8 @@
-import { EstaLogado, getTokenDecodificado } from './Services/LoginService.js';
+import { getTokenUsuario } from './stores/UsuarioStore.js';
 
 export const Headers = {
     'content-type': 'application/json',
-    headers: {Authorization: `Bearer ${EstaLogado() ? getToken() : 'without token'}`}
+    headers: {Authorization: `Bearer ${getTokenUsuario()}`}
 };
 
 export const TipoUsuario = {

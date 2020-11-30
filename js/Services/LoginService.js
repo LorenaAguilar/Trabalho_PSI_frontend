@@ -21,10 +21,6 @@ export function RealizarLogin(usuario, senha) {
         });
 };
 
-export function EstaLogado() {
-    return existeTokenUsuario();
-} 
-
 export function Deslogar() {
     sessionStorage.clear();
 }

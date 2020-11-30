@@ -42,7 +42,7 @@ export const getTokenUsuario = () => {
     return sessionStorage.getItem('tokenUser');
 }
 
-export const setTokenUsuario = (value) => {1
+export const setTokenUsuario = (value) => {
     return sessionStorage.setItem('tokenUser', value);
 }
 

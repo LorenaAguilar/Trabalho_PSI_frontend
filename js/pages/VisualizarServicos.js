@@ -1,14 +1,14 @@
-import { getTokenDecodificado, EstaLogado, Deslogar } from '../Services/LoginService.js';
+import { getTokenDecodificado, Deslogar } from '../Services/LoginService.js';
 import { GetTodosMunicipios } from '../Services/MunicipiosService.js'; 
 import { getPrestador } from '../Services/PrestadorService.js';
 import { getTodosServicos } from '../Services/ListarServicosService.js';
 import { getURL } from '../functions.js'
 import { setIdServicoPrestador } from '../stores/ServicoPrestadorStore.js';
-import { getTipoUsuario, setEmailUsuario, setIdUsuario} from '../stores/UsuarioStore.js';
+import { getTipoUsuario, getTokenUsuario, setEmailUsuario, setIdUsuario} from '../stores/UsuarioStore.js';
 import { rolesUsuario } from '../Constantes.js';
 import { getContratante } from '../Services/ContratanteService.js';
 
-if(EstaLogado()) {
+if(getTokenUsuario()) {
   document.getElementById("botao_logout").onclick = () => {
     Deslogar();
     window.location.pathname = `${getURL()}/index.html`;
@@ -60,7 +60,7 @@ GetTodosMunicipios().then((response) => {
 });
 
 const getInformationLogin = () => {
-  if(EstaLogado()) {
+  if(getTokenUsuario()) {
     const divElement = document.getElementById('login-sucesso');
     
     const { unique_name } = getTokenDecodificado();
