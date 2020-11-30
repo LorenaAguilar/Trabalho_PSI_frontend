@@ -5,6 +5,7 @@ import { setAuthTokenFacebook } from '../stores/facebook/FacebookStore.js';
  
 function checkLoginState() {
     FB.getLoginStatus(function(response) {
+        console.log('reposnse', response);
         statusChangeCallback(response);
         if(response.status === 'connected') {
             setAuthTokenFacebook(response.authResponse.accessToken);
