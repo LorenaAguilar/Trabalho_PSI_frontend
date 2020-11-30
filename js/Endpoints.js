@@ -23,3 +23,5 @@ export const Ordem = `${api}/api/OrdensDeServico`;
 export const HistoricoServicos = `${api}/api/HistoricoDeServicos`;
 
 export const Contratante = `${api}/api/Contratantes`;
+
+export const Facebook = `${api}/api/FacebookSignIn`;
