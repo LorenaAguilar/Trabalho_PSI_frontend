@@ -1,11 +1,15 @@
 import { RealizarLogin } from '../Services/LoginService.js';
 import { rolesUsuario } from '../Constantes.js';
-import { getURL } from '../functions.js'
-
-
+import { getURL } from '../functions.js';
+import { setAuthTokenFacebook } from '../stores/facebook/FacebookStore.js';
+ 
 function checkLoginState() {
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
+        if(response.status === 'connected') {
+            setAuthTokenFacebook(response.authResponse.accessToken);
+            window.location.pathname = `${getURL()}/src/facebook/visualizar_serviços.html`;
+        }
     });
 }
 
