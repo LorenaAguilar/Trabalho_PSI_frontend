@@ -92,10 +92,7 @@
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script type="module">
-      import { getURL } from "./js/functions.js";
-      import { setAuthTokenFacebook } from "./js/stores/facebook/FacebookStore.js";
-
+    <script>
       window.fbAsyncInit = function () {
         FB.init({
           appId: "1325181127827660",
@@ -108,10 +105,12 @@
       };
       function checkLoginState() {
         FB.getLoginStatus(function (response) {
-          console.log("reposnse", response);
           if (response.status === "connected") {
-            setAuthTokenFacebook(response.authResponse.accessToken);
-            window.location.pathname = `${getURL()}/src/facebook/visualizar_serviços.html`;
+            sessionStorage.setItem(
+              "user-auth-token",
+              response.authResponse.accessToken
+            );
+            window.location.pathname = `Trabalho_Sistema_de_Servicos_Gerais_frontend/src/facebook/visualizar_serviços.html`;
           }
         });
       }
