@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contratante</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/contratante.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+  </head>
+  <body id="contratante">
+    <div id="aviso"></div>
+    <div id="container">
+      <div class="card-header">
+        <div class="top-bar-container">
+          <a href="../index.html">
+            <img src="../img/back.svg" alt="Voltar"
+          /></a>
+        </div>
+        <strong class="card-title">
+          Ficamos felizes de você querer contratar nossos serviços!
+        </strong>
+        <p class="card-text">
+          O primeiro passo é preencher esse formulário de inscrição
+        </p>
+      </div>
+
+      <form>
+        <main>
+          <fieldset id="dados_contratante">
+            <legend>Seus dados</legend>
+            <div class="form-group">
+              <label for="inputUsuario">E-mail</label>
+              <input type="email" class="form-control" id="inputUsuario" />
+            </div>
+            <div class="form-group">
+              <label for="inputSenha">Senha</label>
+              <input type="password" class="form-control" id="inputSenha" />
+            </div>
+            <div class="form-group">
+              <label for="inputNomeCompleto">Nome Completo</label>
+              <input type="text" class="form-control" id="inputNomeCompleto" />
+            </div>
+            <div class="form-group">
+              <label for="inputEndereco">Endereço</label>
+              <input type="text" class="form-control" id="inputEndereco" />
+            </div>
+            <div class="form-group">
+              <label for="inputWpp">Whatsapp (somente números)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputWpp"
+                placeholder="(XX) 9 XXXX-XXXX"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputFoto">
+                Link da sua Foto (Comece com https://)
+              </label>
+              <input type="text" class="form-control" id="inputFoto" />
+            </div>
+          </fieldset>
+          <footer>
+            <button id="botao_cadastrar">Salvar cadastro</button>
+            <button id="botao_cancelar">Cancelar</button>
+          </footer>
+        </main>
+      </form>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script type="module" src="../js/pages/Contratante.js"></script>
+    </div>
+  </body>
+</html>
