@@ -1,5 +1,5 @@
 import { Facebook } from '../../Endpoints.js';
-import { TipoUsuario } from '../../Constantes.js';
+import { TipoUsuario, Headers } from '../../Constantes.js';
 
 export function signInContranteFacebook(accessToken, endereco,telefone, biografia, cpf) {
     const data = {
@@ -11,7 +11,7 @@ export function signInContranteFacebook(accessToken, endereco,telefone, biografi
         cpf: cpf
     };
 
-    return axios.post(Facebook, data)
+    return axios.post(Facebook, data, {"content-type": Headers["content-type"]})
     .then((response) => {
         return response.data;
     })
