@@ -103,6 +103,12 @@
 
         FB.AppEvents.logPageView();
       };
+      function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+          console.log("reposnse", response);
+          statusChangeCallback(response);
+        });
+      }
 
       (function (d, s, id) {
         var js,
