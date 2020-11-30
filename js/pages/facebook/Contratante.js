@@ -1,6 +1,6 @@
 import { signInContranteFacebook } from '../../Services/facebook/CadastrarUsuario.js';
 import { getURL } from '../../functions.js';
-import { existeAuthTokenFacebook, getAuthTokenFacebook } from '../../stores/FacebookStore.js';
+import { existeAuthTokenFacebook, getAuthTokenFacebook } from '../../stores/facebook/FacebookStore.js';
 
 if(!existeAuthTokenFacebook()) {
   window.location.pathname = `${getURL()}/index.html`;
