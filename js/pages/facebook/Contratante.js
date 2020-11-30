@@ -1,28 +1,25 @@
-import { TipoUsuario } from '../Constantes.js';
-import { CadastrarUsuario } from '../Services/UsuarioService.js';
-import { getURL } from '../functions.js'
+import { getURL } from '../../functions.js';
+
+/*
+if(!existeAuthTokenFacebook()) {
+  window.location.pathname = `${getURL()}/index.html`;
+}
+*/
 
 const submit = (event) => {
   event.preventDefault();
 
-  const usuario = document.getElementById('inputUsuario').value;
-  const nomeCompleto = document.getElementById('inputNomeCompleto').value;
-  const senha = document.getElementById('inputSenha').value;
   const endereco = document.getElementById('inputEndereco').value;
+  if(!endereco) {
+    alert("Por favor, preencha o campo endereço");
+    return;
+  }
+
   const whatsapp = document.getElementById('inputWpp').value;
-  const foto = document.getElementById('inputFoto').value;
-    
-  const data = {
-    email: usuario,
-    password: senha,
-    nomeCompleto: nomeCompleto,
-    endereco: endereco,
-    telefone: whatsapp,
-    linkFoto: foto,
-    biografia: `Olá, meu nome é ${nomeCompleto}`,
-    tipo: TipoUsuario.contratante,
-    cpf: '555-555-555-55'
-  };
+  if(!whatsapp) {
+    alert("Por favor, preencha o campo whatsapp");
+    return;
+  }
 
   const divAviso = document.getElementById('aviso');
     
